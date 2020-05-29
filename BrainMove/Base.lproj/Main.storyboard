@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BrainMove" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GkV-Jd-ngl">
+                                <rect key="frame" x="24" y="19.5" width="272" height="441"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-eB-WbQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="97"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brainmove_logo" translatesAutoresizingMaskIntoConstraints="NO" id="djo-I6-zmo">
+                                                <rect key="frame" x="61" y="0.0" width="150" height="97"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uT2-Wk-K22">
+                                        <rect key="frame" x="0.0" y="137" width="272" height="76"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERE-VL-ack" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-0M-yeH" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="42" width="272" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CYk-pL-9xd">
+                                        <rect key="frame" x="0.0" y="253" width="272" height="188"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU1-Ce-OCk">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="30"/>
+                                                <state key="normal" title="Olvidó su contraseña?">
+                                                    <color key="titleColor" red="0.0" green="0.63137254899999995" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="forgotPasswordClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eur-cr-DGf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnb-Nt-bH6">
+                                                <rect key="frame" x="0.0" y="46" width="272" height="50"/>
+                                                <color key="backgroundColor" red="0.95294117647058818" green="0.5725490196078431" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="sLm-Ka-7AU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="INICIAR SESIÓN">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="disabled" title="INICIAR SESIÓN"/>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-45-RdY">
+                                                <rect key="frame" x="0.0" y="112" width="272" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No tienes cuenta?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjs-aS-qHp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="132" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPm-sv-9Jw">
+                                                        <rect key="frame" x="140" y="0.0" width="132" height="30"/>
+                                                        <state key="normal" title="Crea una cuenta">
+                                                            <color key="titleColor" red="0.0" green="0.63137254901960782" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9d-Kf-zhQ">
+                                                <rect key="frame" x="0.0" y="158" width="272" height="30"/>
+                                                <state key="normal" title="Ver términos y condiciones">
+                                                    <color key="titleColor" red="0.0" green="0.63137254901960782" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GkV-Jd-ngl" secondAttribute="trailing" constant="24" id="BhV-oz-n6d"/>
+                            <constraint firstItem="GkV-Jd-ngl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="CO9-ap-3dJ"/>
+                            <constraint firstItem="GkV-Jd-ngl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lrt-nQ-VYR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="ERE-VL-ack" id="Yfn-3y-R9b"/>
+                        <outlet property="loginButton" destination="gnb-Nt-bH6" id="nE5-Lk-7bX"/>
+                        <outlet property="password" destination="F0S-0M-yeH" id="td8-JJ-4yj"/>
+                        <segue destination="sSq-bx-XD5" kind="presentation" identifier="showForgotPassword" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="5zh-gt-S8l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="pcN-7E-z2A">
+            <objects>
+                <viewController id="sSq-bx-XD5" customClass="ForgotPasswordViewController" customModule="BrainMove" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G9B-If-C0F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="LZB-vB-sSy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
+                                <color key="barTintColor" red="0.0" green="0.63137254899999995" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Recuperar contraseña" id="lRU-mc-jeP">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_arrow_back_ios" id="h7F-B2-VCK">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="navigateBack:" destination="sSq-bx-XD5" id="Lnt-C2-nJy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rt8-6y-ojs">
+                                <rect key="frame" x="24" y="11" width="272" height="445"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-2p-vX8">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="385"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa el correo electrónico registrado en BrainMove para enviar un enlace de recuperación de contraseña." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-lC-IUU">
+                                                <rect key="frame" x="0.0" y="0.0" width="272" height="58"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-ap-Vvo" customClass="MDCTextField">
+                                                <rect key="frame" x="0.0" y="68" width="272" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="R5F-Th-voS">
+                                                <rect key="frame" x="0.0" y="112" width="272" height="273"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-OP-UYy">
+                                        <rect key="frame" x="0.0" y="395" width="272" height="50"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="B9I-MA-5VZ"/>
+                                        </constraints>
+                                        <state key="normal" title="ENVIAR">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendRecoveryEmail:" destination="sSq-bx-XD5" eventType="touchUpInside" id="uSB-Z4-vwo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rt8-6y-ojs" firstAttribute="leading" secondItem="h59-sT-ci1" secondAttribute="leading" constant="24" id="4aS-bP-r4Y"/>
+                            <constraint firstItem="rt8-6y-ojs" firstAttribute="top" secondItem="LZB-vB-sSy" secondAttribute="bottom" constant="8" id="5Kp-eo-NbL"/>
+                            <constraint firstItem="h59-sT-ci1" firstAttribute="trailing" secondItem="rt8-6y-ojs" secondAttribute="trailing" constant="24" id="6GN-Ki-eJX"/>
+                            <constraint firstItem="LZB-vB-sSy" firstAttribute="top" secondItem="h59-sT-ci1" secondAttribute="top" id="9nL-S7-hMe"/>
+                            <constraint firstItem="LZB-vB-sSy" firstAttribute="leading" secondItem="h59-sT-ci1" secondAttribute="leading" id="IY3-js-MLO"/>
+                            <constraint firstItem="h59-sT-ci1" firstAttribute="bottom" secondItem="rt8-6y-ojs" secondAttribute="bottom" constant="24" id="ce5-0q-gb2"/>
+                            <constraint firstItem="LZB-vB-sSy" firstAttribute="trailing" secondItem="h59-sT-ci1" secondAttribute="trailing" id="iGN-GE-Dri"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h59-sT-ci1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hHj-FA-2AA"/>
+                    <connections>
+                        <outlet property="email" destination="nhO-ap-Vvo" id="fnD-fd-zHM"/>
+                        <outlet property="sendRecoveryEmailButton" destination="XCY-OP-UYy" id="PMg-kc-VzM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYa-LE-cMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265.217391304348" y="512.27678571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="brainmove_logo" width="150" height="97"/>
+        <image name="ic_arrow_back_ios" width="24" height="24"/>
+    </resources>
+</document>

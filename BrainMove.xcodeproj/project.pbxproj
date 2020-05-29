@@ -1,0 +1,821 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1017FC243F7C197C2237B791 /* Pods_BrainMove_BrainMoveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138A0C5F4CD7D4661F28ACE0 /* Pods_BrainMove_BrainMoveUITests.framework */; };
+		5340F0926BCD031CC70D753A /* Pods_BrainMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45776C82ED13FF81F92706 /* Pods_BrainMove.framework */; };
+		CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282D24802F780003E870 /* AppDelegate.swift */; };
+		CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282F24802F780003E870 /* SceneDelegate.swift */; };
+		CA9B283224802F780003E870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B283124802F780003E870 /* ViewController.swift */; };
+		CA9B283524802F780003E870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9B283324802F780003E870 /* Main.storyboard */; };
+		CA9B283724802F780003E870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9B283624802F780003E870 /* Assets.xcassets */; };
+		CA9B283A24802F780003E870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9B283824802F780003E870 /* LaunchScreen.storyboard */; };
+		CA9B284524802F790003E870 /* BrainMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B284424802F790003E870 /* BrainMoveTests.swift */; };
+		CA9B285024802F790003E870 /* BrainMoveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B284F24802F790003E870 /* BrainMoveUITests.swift */; };
+		CA9B285E248058A80003E870 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B285D248058A80003E870 /* UIColorExt.swift */; };
+		CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B286024805CB20003E870 /* MDCTextInputControllerFilledExt.swift */; };
+		CA9B2864248072610003E870 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA9B2863248072600003E870 /* Localizable.strings */; };
+		CA9B28672480804C0003E870 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B28662480804C0003E870 /* ForgotPasswordViewController.swift */; };
+		CA9B286924809BA00003E870 /* LoginViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B286824809BA00003E870 /* LoginViewController+TextField.swift */; };
+		CA9B286B2480A19C0003E870 /* ForgotPasswordViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B286A2480A19C0003E870 /* ForgotPasswordViewController+TextField.swift */; };
+		CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B286D2480A62E0003E870 /* LoginViewModel.swift */; };
+		CA9B28702480ABFC0003E870 /* ButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B286F2480ABFC0003E870 /* ButtonExt.swift */; };
+		CA9B28722480B0010003E870 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA9B28712480B0010003E870 /* GoogleService-Info.plist */; };
+		CA9B28742480C0AA0003E870 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B28732480C0AA0003E870 /* ForgotPasswordViewModel.swift */; };
+		D4F8B7560CD831848D60B268 /* Pods_BrainMoveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057E38CD066E946370269415 /* Pods_BrainMoveTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA9B284124802F790003E870 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA9B282224802F780003E870 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA9B282924802F780003E870;
+			remoteInfo = BrainMove;
+		};
+		CA9B284C24802F790003E870 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA9B282224802F780003E870 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA9B282924802F780003E870;
+			remoteInfo = BrainMove;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		057E38CD066E946370269415 /* Pods_BrainMoveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainMoveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		138A0C5F4CD7D4661F28ACE0 /* Pods_BrainMove_BrainMoveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainMove_BrainMoveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E29AB19C8853C2EFAF9036 /* Pods-BrainMoveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMoveTests.debug.xcconfig"; path = "Target Support Files/Pods-BrainMoveTests/Pods-BrainMoveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B12C1F65979B970E4E5A9CC /* Pods-BrainMove-BrainMoveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove-BrainMoveUITests.release.xcconfig"; path = "Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F45776C82ED13FF81F92706 /* Pods_BrainMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCABF8E66C5205F0EE9F15E /* Pods-BrainMoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMoveTests.release.xcconfig"; path = "Target Support Files/Pods-BrainMoveTests/Pods-BrainMoveTests.release.xcconfig"; sourceTree = "<group>"; };
+		9365F6B2BD0A33361563341F /* Pods-BrainMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.release.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.release.xcconfig"; sourceTree = "<group>"; };
+		9443E15EE953B690926FF96F /* Pods-BrainMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.debug.xcconfig"; sourceTree = "<group>"; };
+		A8BFF04B72D8C0CD86F9CD0F /* Pods-BrainMove-BrainMoveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA9B282A24802F780003E870 /* BrainMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9B282D24802F780003E870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA9B282F24802F780003E870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CA9B283124802F780003E870 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA9B283424802F780003E870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA9B283624802F780003E870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA9B283924802F780003E870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA9B283B24802F780003E870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9B284024802F790003E870 /* BrainMoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainMoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9B284424802F790003E870 /* BrainMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMoveTests.swift; sourceTree = "<group>"; };
+		CA9B284624802F790003E870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9B284B24802F790003E870 /* BrainMoveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainMoveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9B284F24802F790003E870 /* BrainMoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMoveUITests.swift; sourceTree = "<group>"; };
+		CA9B285124802F790003E870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9B285D248058A80003E870 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		CA9B286024805CB20003E870 /* MDCTextInputControllerFilledExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextInputControllerFilledExt.swift; sourceTree = "<group>"; };
+		CA9B2863248072600003E870 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CA9B28662480804C0003E870 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CA9B286824809BA00003E870 /* LoginViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextField.swift"; sourceTree = "<group>"; };
+		CA9B286A2480A19C0003E870 /* ForgotPasswordViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPasswordViewController+TextField.swift"; sourceTree = "<group>"; };
+		CA9B286D2480A62E0003E870 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CA9B286F2480ABFC0003E870 /* ButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExt.swift; sourceTree = "<group>"; };
+		CA9B28712480B0010003E870 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA9B28732480C0AA0003E870 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA9B282724802F780003E870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5340F0926BCD031CC70D753A /* Pods_BrainMove.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B283D24802F790003E870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F8B7560CD831848D60B268 /* Pods_BrainMoveTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B284824802F790003E870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1017FC243F7C197C2237B791 /* Pods_BrainMove_BrainMoveUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB8CD9778B0C36A92AAB8F59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9443E15EE953B690926FF96F /* Pods-BrainMove.debug.xcconfig */,
+				9365F6B2BD0A33361563341F /* Pods-BrainMove.release.xcconfig */,
+				A8BFF04B72D8C0CD86F9CD0F /* Pods-BrainMove-BrainMoveUITests.debug.xcconfig */,
+				3B12C1F65979B970E4E5A9CC /* Pods-BrainMove-BrainMoveUITests.release.xcconfig */,
+				38E29AB19C8853C2EFAF9036 /* Pods-BrainMoveTests.debug.xcconfig */,
+				8BCABF8E66C5205F0EE9F15E /* Pods-BrainMoveTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CA9B282124802F780003E870 = {
+			isa = PBXGroup;
+			children = (
+				CA9B282C24802F780003E870 /* BrainMove */,
+				CA9B284324802F790003E870 /* BrainMoveTests */,
+				CA9B284E24802F790003E870 /* BrainMoveUITests */,
+				CA9B282B24802F780003E870 /* Products */,
+				AB8CD9778B0C36A92AAB8F59 /* Pods */,
+				F6625B7241A9D34CD5D361E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CA9B282B24802F780003E870 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B282A24802F780003E870 /* BrainMove.app */,
+				CA9B284024802F790003E870 /* BrainMoveTests.xctest */,
+				CA9B284B24802F790003E870 /* BrainMoveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA9B282C24802F780003E870 /* BrainMove */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B286C2480A61D0003E870 /* ViewModels */,
+				CA9B28652480803B0003E870 /* ViewControllers */,
+				CA9B2862248072210003E870 /* Localization */,
+				CA9B285F24805ADD0003E870 /* extensions */,
+				CA9B282D24802F780003E870 /* AppDelegate.swift */,
+				CA9B282F24802F780003E870 /* SceneDelegate.swift */,
+				CA9B283324802F780003E870 /* Main.storyboard */,
+				CA9B283624802F780003E870 /* Assets.xcassets */,
+				CA9B283824802F780003E870 /* LaunchScreen.storyboard */,
+				CA9B283B24802F780003E870 /* Info.plist */,
+				CA9B28712480B0010003E870 /* GoogleService-Info.plist */,
+			);
+			path = BrainMove;
+			sourceTree = "<group>";
+		};
+		CA9B284324802F790003E870 /* BrainMoveTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B284424802F790003E870 /* BrainMoveTests.swift */,
+				CA9B284624802F790003E870 /* Info.plist */,
+			);
+			path = BrainMoveTests;
+			sourceTree = "<group>";
+		};
+		CA9B284E24802F790003E870 /* BrainMoveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B284F24802F790003E870 /* BrainMoveUITests.swift */,
+				CA9B285124802F790003E870 /* Info.plist */,
+			);
+			path = BrainMoveUITests;
+			sourceTree = "<group>";
+		};
+		CA9B285F24805ADD0003E870 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B285D248058A80003E870 /* UIColorExt.swift */,
+				CA9B286024805CB20003E870 /* MDCTextInputControllerFilledExt.swift */,
+				CA9B286824809BA00003E870 /* LoginViewController+TextField.swift */,
+				CA9B286A2480A19C0003E870 /* ForgotPasswordViewController+TextField.swift */,
+				CA9B286F2480ABFC0003E870 /* ButtonExt.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		CA9B2862248072210003E870 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B2863248072600003E870 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		CA9B28652480803B0003E870 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B283124802F780003E870 /* ViewController.swift */,
+				CA9B28662480804C0003E870 /* ForgotPasswordViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA9B286C2480A61D0003E870 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B286D2480A62E0003E870 /* LoginViewModel.swift */,
+				CA9B28732480C0AA0003E870 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6625B7241A9D34CD5D361E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F45776C82ED13FF81F92706 /* Pods_BrainMove.framework */,
+				138A0C5F4CD7D4661F28ACE0 /* Pods_BrainMove_BrainMoveUITests.framework */,
+				057E38CD066E946370269415 /* Pods_BrainMoveTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA9B282924802F780003E870 /* BrainMove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9B285424802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMove" */;
+			buildPhases = (
+				D40C36555877716BACC738D3 /* [CP] Check Pods Manifest.lock */,
+				CA9B282624802F780003E870 /* Sources */,
+				CA9B282724802F780003E870 /* Frameworks */,
+				CA9B282824802F780003E870 /* Resources */,
+				20216033F5CEE6B025DF9DE1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrainMove;
+			productName = BrainMove;
+			productReference = CA9B282A24802F780003E870 /* BrainMove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA9B283F24802F790003E870 /* BrainMoveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9B285724802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMoveTests" */;
+			buildPhases = (
+				BB59CFD30A30BA3ACE0C6275 /* [CP] Check Pods Manifest.lock */,
+				CA9B283C24802F790003E870 /* Sources */,
+				CA9B283D24802F790003E870 /* Frameworks */,
+				CA9B283E24802F790003E870 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA9B284224802F790003E870 /* PBXTargetDependency */,
+			);
+			name = BrainMoveTests;
+			productName = BrainMoveTests;
+			productReference = CA9B284024802F790003E870 /* BrainMoveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA9B284A24802F790003E870 /* BrainMoveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9B285A24802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMoveUITests" */;
+			buildPhases = (
+				FE75920EBA7A2F841E7F4B12 /* [CP] Check Pods Manifest.lock */,
+				CA9B284724802F790003E870 /* Sources */,
+				CA9B284824802F790003E870 /* Frameworks */,
+				CA9B284924802F790003E870 /* Resources */,
+				2626BFDE01CE910E9D24A323 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA9B284D24802F790003E870 /* PBXTargetDependency */,
+			);
+			name = BrainMoveUITests;
+			productName = BrainMoveUITests;
+			productReference = CA9B284B24802F790003E870 /* BrainMoveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA9B282224802F780003E870 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Heriberto Ureña Madrigal";
+				TargetAttributes = {
+					CA9B282924802F780003E870 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					CA9B283F24802F790003E870 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = CA9B282924802F780003E870;
+					};
+					CA9B284A24802F790003E870 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = CA9B282924802F780003E870;
+					};
+				};
+			};
+			buildConfigurationList = CA9B282524802F780003E870 /* Build configuration list for PBXProject "BrainMove" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA9B282124802F780003E870;
+			productRefGroup = CA9B282B24802F780003E870 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA9B282924802F780003E870 /* BrainMove */,
+				CA9B283F24802F790003E870 /* BrainMoveTests */,
+				CA9B284A24802F790003E870 /* BrainMoveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA9B282824802F780003E870 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B283A24802F780003E870 /* LaunchScreen.storyboard in Resources */,
+				CA9B2864248072610003E870 /* Localizable.strings in Resources */,
+				CA9B28722480B0010003E870 /* GoogleService-Info.plist in Resources */,
+				CA9B283724802F780003E870 /* Assets.xcassets in Resources */,
+				CA9B283524802F780003E870 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B283E24802F790003E870 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B284924802F790003E870 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20216033F5CEE6B025DF9DE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrainMove/Pods-BrainMove-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrainMove/Pods-BrainMove-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrainMove/Pods-BrainMove-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2626BFDE01CE910E9D24A323 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB59CFD30A30BA3ACE0C6275 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrainMoveTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D40C36555877716BACC738D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrainMove-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE75920EBA7A2F841E7F4B12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrainMove-BrainMoveUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA9B282624802F780003E870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B283224802F780003E870 /* ViewController.swift in Sources */,
+				CA9B285E248058A80003E870 /* UIColorExt.swift in Sources */,
+				CA9B28672480804C0003E870 /* ForgotPasswordViewController.swift in Sources */,
+				CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */,
+				CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */,
+				CA9B28702480ABFC0003E870 /* ButtonExt.swift in Sources */,
+				CA9B28742480C0AA0003E870 /* ForgotPasswordViewModel.swift in Sources */,
+				CA9B286924809BA00003E870 /* LoginViewController+TextField.swift in Sources */,
+				CA9B286B2480A19C0003E870 /* ForgotPasswordViewController+TextField.swift in Sources */,
+				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,
+				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B283C24802F790003E870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B284524802F790003E870 /* BrainMoveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9B284724802F790003E870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9B285024802F790003E870 /* BrainMoveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA9B284224802F790003E870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA9B282924802F780003E870 /* BrainMove */;
+			targetProxy = CA9B284124802F790003E870 /* PBXContainerItemProxy */;
+		};
+		CA9B284D24802F790003E870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA9B282924802F780003E870 /* BrainMove */;
+			targetProxy = CA9B284C24802F790003E870 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA9B283324802F780003E870 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA9B283424802F780003E870 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA9B283824802F780003E870 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA9B283924802F780003E870 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA9B285224802F790003E870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA9B285324802F790003E870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA9B285524802F790003E870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9443E15EE953B690926FF96F /* Pods-BrainMove.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMove/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.brainmove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA9B285624802F790003E870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9365F6B2BD0A33361563341F /* Pods-BrainMove.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMove/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.brainmove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA9B285824802F790003E870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38E29AB19C8853C2EFAF9036 /* Pods-BrainMoveTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMoveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.BrainMoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainMove.app/BrainMove";
+			};
+			name = Debug;
+		};
+		CA9B285924802F790003E870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BCABF8E66C5205F0EE9F15E /* Pods-BrainMoveTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMoveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.BrainMoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainMove.app/BrainMove";
+			};
+			name = Release;
+		};
+		CA9B285B24802F790003E870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8BFF04B72D8C0CD86F9CD0F /* Pods-BrainMove-BrainMoveUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMoveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.BrainMoveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainMove;
+			};
+			name = Debug;
+		};
+		CA9B285C24802F790003E870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B12C1F65979B970E4E5A9CC /* Pods-BrainMove-BrainMoveUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A86G9Z8393;
+				INFOPLIST_FILE = BrainMoveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loguito.BrainMoveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainMove;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA9B282524802F780003E870 /* Build configuration list for PBXProject "BrainMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B285224802F790003E870 /* Debug */,
+				CA9B285324802F790003E870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9B285424802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B285524802F790003E870 /* Debug */,
+				CA9B285624802F790003E870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9B285724802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMoveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B285824802F790003E870 /* Debug */,
+				CA9B285924802F790003E870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9B285A24802F790003E870 /* Build configuration list for PBXNativeTarget "BrainMoveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9B285B24802F790003E870 /* Debug */,
+				CA9B285C24802F790003E870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA9B282224802F780003E870 /* Project object */;
+}
