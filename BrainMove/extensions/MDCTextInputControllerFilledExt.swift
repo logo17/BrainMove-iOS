@@ -13,5 +13,6 @@ extension MDCTextInputControllerFilled {
     func toAppStyle() {
         floatingPlaceholderActiveColor = UIColor.init(hexString: "#00A19A")
         activeColor = UIColor.init(hexString: "#00A19A")
+        borderFillColor = UIColor.white
     }
 }

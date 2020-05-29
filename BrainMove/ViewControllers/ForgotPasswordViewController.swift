@@ -26,10 +26,16 @@ class ForgotPasswordViewController : UIViewController {
         initViews()
         bindListeners()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
     private func initViews() {
+        sendRecoveryEmailButton.toPrimaryButton()
         email.delegate = self
-        email.placeholder = NSLocalizedString("email_placeholder", comment: "")
+        email.placeholder = self.getLocalizedString(key: "email_placeholder")
         emailController = MDCTextInputControllerFilled(textInput: email)
         emailController?.toAppStyle()
     }
@@ -51,15 +57,14 @@ class ForgotPasswordViewController : UIViewController {
         
         viewModel.output.emailSent
         .drive(onNext:{ [weak self] isSuccess in
-            print(isSuccess)
+            self?.dismiss(animated: true, completion: {
+                self?.showSnackbar(text: self?.getLocalizedString(key: "reset_password_success") ?? "")
+            })
         })
         .disposed(by: disposeBag)
     }
     
     @IBAction func sendRecoveryEmail(_ sender: Any) {
         self.viewModel.resetPassword(email: self.email.text ?? "")
-    }
-    @IBAction func navigateBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 }

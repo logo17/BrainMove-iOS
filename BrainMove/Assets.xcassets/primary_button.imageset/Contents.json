@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ic_arrow_back_ios.png",
+      "filename" : "boton_inicicar sesion.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ic_arrow_back_ios@2x.png",
+      "filename" : "boton_inicicar sesion@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic_arrow_back_ios@3x.png",
+      "filename" : "boton_inicicar sesion@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

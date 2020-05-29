@@ -7,3 +7,5 @@
 */
 "email_placeholder" = "Correo electrónico";
 "password_placeholder" = "Contraseña";
+"fullname_placeholder" = "Nombre completo";
+"reset_password_success" = "Se ha enviado un enlace a tu correo para reestablecer la contraseña";

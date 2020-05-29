@@ -28,8 +28,14 @@ class ViewController: UIViewController {
         initViews()
         bindListeners()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     private func initViews() {
+        loginButton.toPrimaryButton()
         email.delegate = self
         email.placeholder = NSLocalizedString("email_placeholder", comment: "")
         emailController = MDCTextInputControllerFilled(textInput: email)
@@ -65,6 +71,12 @@ class ViewController: UIViewController {
     }
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         performSegue(withIdentifier: "showForgotPassword", sender: self)
+    }
+    @IBAction func createAccountClicked(_ sender: Any) {
+        performSegue(withIdentifier: "showCreateAccount", sender: self)
+    }
+    @IBAction func loginClicked(_ sender: Any) {
+        performSegue(withIdentifier: "showMainScreen", sender: self)
     }
 }
 
