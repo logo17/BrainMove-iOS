@@ -32,7 +32,7 @@ class CreateAccountViewController : UIViewController {
     }
 
     private func initViews() {
-        createAccountButton.toPrimaryButton()
+        createAccountButton.toRoundedButton(radius: 19)
         email.delegate = self
         email.placeholder = NSLocalizedString("email_placeholder", comment: "")
         emailController = MDCTextInputControllerFilled(textInput: email)

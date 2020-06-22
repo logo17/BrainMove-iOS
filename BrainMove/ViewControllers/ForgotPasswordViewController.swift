@@ -33,7 +33,7 @@ class ForgotPasswordViewController : UIViewController {
     }
 
     private func initViews() {
-        sendRecoveryEmailButton.toPrimaryButton()
+        sendRecoveryEmailButton.toRoundedButton(radius: 19)
         email.delegate = self
         email.placeholder = self.getLocalizedString(key: "email_placeholder")
         emailController = MDCTextInputControllerFilled(textInput: email)

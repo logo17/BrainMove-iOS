@@ -32,6 +32,15 @@
 		CADD8474249D93B80085D76E /* MeasurementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD8473249D93B80085D76E /* MeasurementsViewController.swift */; };
 		CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD8475249D94970085D76E /* UILabel+Ext.swift */; };
 		CADD8479249DCB4B0085D76E /* MeasurementsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD8478249DCB4B0085D76E /* MeasurementsView.xib */; };
+		CADD847B249E903F0085D76E /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD847A249E903F0085D76E /* ReservationsViewController.swift */; };
+		CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD847D249EAE860085D76E /* ReservationTableViewCell.swift */; };
+		CADD8480249ECF590085D76E /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD847F249ECF590085D76E /* PlanViewController.swift */; };
+		CADD8482249ED0800085D76E /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD8481249ED0800085D76E /* UIView+Utils.swift */; };
+		CADD848424A01E0F0085D76E /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848324A01E0F0085D76E /* LauncherViewController.swift */; };
+		CADD848624A01F4F0085D76E /* LauncherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848524A01F4F0085D76E /* LauncherViewModel.swift */; };
+		CADD848824A053C40085D76E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD848724A053C40085D76E /* LoadingView.xib */; };
+		CADD848A24A054110085D76E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848924A054110085D76E /* LoadingView.swift */; };
+		CADD848C24A0558D0085D76E /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */; };
 		D4F8B7560CD831848D60B268 /* Pods_BrainMoveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057E38CD066E946370269415 /* Pods_BrainMoveTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +100,15 @@
 		CADD8473249D93B80085D76E /* MeasurementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsViewController.swift; sourceTree = "<group>"; };
 		CADD8475249D94970085D76E /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		CADD8478249DCB4B0085D76E /* MeasurementsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasurementsView.xib; sourceTree = "<group>"; };
+		CADD847A249E903F0085D76E /* ReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
+		CADD847D249EAE860085D76E /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		CADD847F249ECF590085D76E /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		CADD8481249ED0800085D76E /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		CADD848324A01E0F0085D76E /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
+		CADD848524A01F4F0085D76E /* LauncherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewModel.swift; sourceTree = "<group>"; };
+		CADD848724A053C40085D76E /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		CADD848924A054110085D76E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +177,7 @@
 		CA9B282C24802F780003E870 /* BrainMove */ = {
 			isa = PBXGroup;
 			children = (
+				CADD847C249EAE540085D76E /* Cells */,
 				CADD8466249C3CB30085D76E /* Views */,
 				CA9B286C2480A61D0003E870 /* ViewModels */,
 				CA9B28652480803B0003E870 /* ViewControllers */,
@@ -202,6 +221,8 @@
 				CA9B286F2480ABFC0003E870 /* ButtonExt.swift */,
 				CADD84622482F62D0085D76E /* ViewController+Snackbar.swift */,
 				CADD8475249D94970085D76E /* UILabel+Ext.swift */,
+				CADD8481249ED0800085D76E /* UIView+Utils.swift */,
+				CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -221,6 +242,9 @@
 				CA9B28662480804C0003E870 /* ForgotPasswordViewController.swift */,
 				CADD84642482FDA00085D76E /* CreateAccountViewController.swift */,
 				CADD8473249D93B80085D76E /* MeasurementsViewController.swift */,
+				CADD847A249E903F0085D76E /* ReservationsViewController.swift */,
+				CADD847F249ECF590085D76E /* PlanViewController.swift */,
+				CADD848324A01E0F0085D76E /* LauncherViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +254,7 @@
 			children = (
 				CA9B286D2480A62E0003E870 /* LoginViewModel.swift */,
 				CA9B28732480C0AA0003E870 /* ForgotPasswordViewModel.swift */,
+				CADD848524A01F4F0085D76E /* LauncherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,8 +264,18 @@
 			children = (
 				CADD846B249C3DDB0085D76E /* MeasurementsView.swift */,
 				CADD8478249DCB4B0085D76E /* MeasurementsView.xib */,
+				CADD848724A053C40085D76E /* LoadingView.xib */,
+				CADD848924A054110085D76E /* LoadingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CADD847C249EAE540085D76E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CADD847D249EAE860085D76E /* ReservationTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F6625B7241A9D34CD5D361E9 /* Frameworks */ = {
@@ -366,6 +401,7 @@
 				CA9B2864248072610003E870 /* Localizable.strings in Resources */,
 				CA9B28722480B0010003E870 /* GoogleService-Info.plist in Resources */,
 				CADD8479249DCB4B0085D76E /* MeasurementsView.xib in Resources */,
+				CADD848824A053C40085D76E /* LoadingView.xib in Resources */,
 				CA9B283724802F780003E870 /* Assets.xcassets in Resources */,
 				CA9B283524802F780003E870 /* Main.storyboard in Resources */,
 			);
@@ -498,9 +534,14 @@
 				CA9B283224802F780003E870 /* ViewController.swift in Sources */,
 				CA9B285E248058A80003E870 /* UIColorExt.swift in Sources */,
 				CA9B28672480804C0003E870 /* ForgotPasswordViewController.swift in Sources */,
+				CADD848A24A054110085D76E /* LoadingView.swift in Sources */,
 				CADD84632482F62D0085D76E /* ViewController+Snackbar.swift in Sources */,
+				CADD848624A01F4F0085D76E /* LauncherViewModel.swift in Sources */,
 				CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */,
+				CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */,
 				CADD84652482FDA00085D76E /* CreateAccountViewController.swift in Sources */,
+				CADD8482249ED0800085D76E /* UIView+Utils.swift in Sources */,
+				CADD848C24A0558D0085D76E /* UIViewController+Spinner.swift in Sources */,
 				CADD8474249D93B80085D76E /* MeasurementsViewController.swift in Sources */,
 				CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */,
 				CA9B28702480ABFC0003E870 /* ButtonExt.swift in Sources */,
@@ -509,7 +550,10 @@
 				CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */,
 				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,
 				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
+				CADD848424A01E0F0085D76E /* LauncherViewController.swift in Sources */,
+				CADD847B249E903F0085D76E /* ReservationsViewController.swift in Sources */,
 				CADD846C249C3DDB0085D76E /* MeasurementsView.swift in Sources */,
+				CADD8480249ECF590085D76E /* PlanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

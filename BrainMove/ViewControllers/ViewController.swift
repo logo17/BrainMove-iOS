@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
 
     private func initViews() {
-        loginButton.toPrimaryButton()
+        loginButton.toRoundedButton(radius: 19)
         email.delegate = self
         email.placeholder = NSLocalizedString("email_placeholder", comment: "")
         emailController = MDCTextInputControllerFilled(textInput: email)
@@ -68,6 +68,13 @@ class ViewController: UIViewController {
                 self?.loginButton.handleButtonEnabled(isEnabled: isEnabled)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.output.successLogin
+        .drive(onNext:{ [weak self] isEnabled in
+            self?.removeSpinner()
+            self?.performSegue(withIdentifier: "showMainScreenFromLogin", sender: self)
+        })
+        .disposed(by: disposeBag)
     }
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         performSegue(withIdentifier: "showForgotPassword", sender: self)
@@ -76,7 +83,8 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "showCreateAccount", sender: self)
     }
     @IBAction func loginClicked(_ sender: Any) {
-        performSegue(withIdentifier: "showMainScreen", sender: self)
+        self.showSpinner(onView: self.view)
+        viewModel.loginUser(email: self.email.text ?? "", password: self.password.text ?? "")
     }
 }
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="BrainMove" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="JIu-Iu-mix"/>
+                <outlet property="dataContainer" destination="8Lc-fV-mRU" id="7mB-uJ-XI3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lc-fV-mRU">
+                    <rect key="frame" x="60" y="89" width="294" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GQS-2O-YUE">
+                            <rect key="frame" x="0.0" y="0.0" width="294" height="150"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="InO-l9-wcT">
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="75"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-AX-aOt">
+                                    <rect key="frame" x="0.0" y="75" width="294" height="75"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="GQS-2O-YUE" secondAttribute="trailing" id="Ae8-4w-h7E"/>
+                        <constraint firstItem="GQS-2O-YUE" firstAttribute="leading" secondItem="8Lc-fV-mRU" secondAttribute="leading" id="IAA-Sd-dqx"/>
+                        <constraint firstAttribute="height" constant="150" id="pv3-zk-h3E"/>
+                        <constraint firstAttribute="bottom" secondItem="GQS-2O-YUE" secondAttribute="bottom" id="qjS-eE-ahL"/>
+                        <constraint firstItem="GQS-2O-YUE" firstAttribute="top" secondItem="8Lc-fV-mRU" secondAttribute="top" id="yCv-Jz-BKJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="8Lc-fV-mRU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="Fnf-bQ-MCa"/>
+                <constraint firstItem="8Lc-fV-mRU" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kD2-TO-fQ2"/>
+                <constraint firstItem="8Lc-fV-mRU" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="xA0-0R-mOq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="-60.267857142857139"/>
+        </view>
+    </objects>
+</document>

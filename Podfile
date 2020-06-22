@@ -8,6 +8,7 @@ target 'BrainMove' do
   # Pods for BrainMove
   pod 'MaterialComponents', :inhibit_warnings => true
   pod 'MaterialComponents/Snackbar', :inhibit_warnings => true
+  pod 'MaterialComponents/Tabs', :inhibit_warnings => true
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Firebase/Auth'

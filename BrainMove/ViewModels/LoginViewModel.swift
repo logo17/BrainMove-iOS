@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import FirebaseAuth
 
 protocol LoginViewModelType {
     associatedtype Input
@@ -21,6 +22,8 @@ protocol LoginViewModelType {
 final class LoginViewModel : LoginViewModelType {
     var input: LoginViewModel.Input
     var output: LoginViewModel.Output
+    
+    private let loginSubject = PublishSubject<Bool>()
 
     struct Input {
         let email: AnyObserver<String>
@@ -29,6 +32,7 @@ final class LoginViewModel : LoginViewModelType {
 
     struct Output {
         let isButtonEnabled: Driver<Bool>
+        let successLogin: Driver<Bool>
     }
 
     init() {
@@ -46,10 +50,18 @@ final class LoginViewModel : LoginViewModelType {
         }
         .startWith(false)
         .asDriver(onErrorJustReturn: false)
-            
-        
-
+    
         self.input = Input(email: emailSubject.asObserver(), password:passwordSubject.asObserver())
-        self.output = Output(isButtonEnabled: enableButton)
+        self.output = Output(isButtonEnabled: enableButton, successLogin: loginSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
+    }
+    
+    func loginUser(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard error == nil else {
+              self?.loginSubject.onNext(false)
+              return
+          }
+          self?.loginSubject.onNext(true)
+        }
     }
 }

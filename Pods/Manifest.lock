@@ -678,6 +678,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - MaterialComponents
   - MaterialComponents/Snackbar
+  - MaterialComponents/Tabs
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
 
@@ -726,6 +727,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 2def92db97b642f26b19d7c22a23a9d455403064
+PODFILE CHECKSUM: aeeb5447916beb176c97f7c9cf7878091f146d5f
 
 COCOAPODS: 1.9.2
