@@ -12,6 +12,8 @@ target 'BrainMove' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 
   target 'BrainMoveTests' do
     inherit! :search_paths

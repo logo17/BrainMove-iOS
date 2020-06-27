@@ -11,12 +11,12 @@ import UIKit
 
 class ReservationTableViewCell : UITableViewCell {
     @IBOutlet weak var reservationDetail: UILabel!
-    @IBOutlet weak var reservationButton: UIButton!
     @IBOutlet weak var content: UIView!
+    @IBOutlet weak var reservationStatus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         content.layer.cornerRadius = 22
-        reservationButton.toRoundedButton(radius: 13)
+        reservationStatus.toRoundedLabel(radius: 13)
     }
 }

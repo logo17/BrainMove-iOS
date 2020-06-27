@@ -43,7 +43,7 @@ final class ForgotPasswordViewModel : ForgotPasswordViewModelType {
         let sendPasswordRecoveryClickedSubject = PublishSubject<Void>()
         
         let validEmail = emailSubject.asObservable()
-            .map{ !$0.isEmpty }
+            .map{ $0.isValidEmail() }
         
         let enableButton = validEmail
             .startWith(false)

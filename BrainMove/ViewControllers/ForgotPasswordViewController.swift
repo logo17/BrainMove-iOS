@@ -57,6 +57,7 @@ class ForgotPasswordViewController : UIViewController {
         
         viewModel.output.emailSent
         .drive(onNext:{ [weak self] isSuccess in
+            self?.removeSpinner()
             self?.dismiss(animated: true, completion: {
                 self?.showSnackbar(text: self?.getLocalizedString(key: "reset_password_success") ?? "")
             })
@@ -65,6 +66,7 @@ class ForgotPasswordViewController : UIViewController {
     }
     
     @IBAction func sendRecoveryEmail(_ sender: Any) {
+        self.showSpinner(onView: self.view)
         self.viewModel.resetPassword(email: self.email.text ?? "")
     }
 }

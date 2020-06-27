@@ -41,6 +41,17 @@
 		CADD848824A053C40085D76E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADD848724A053C40085D76E /* LoadingView.xib */; };
 		CADD848A24A054110085D76E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848924A054110085D76E /* LoadingView.swift */; };
 		CADD848C24A0558D0085D76E /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */; };
+		CADD848E24A2BECF0085D76E /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848D24A2BECF0085D76E /* String+Validations.swift */; };
+		CADD849024A2C0070085D76E /* MeasurementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD848F24A2C0070085D76E /* MeasurementsViewModel.swift */; };
+		CADD849324A2C5DE0085D76E /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849224A2C5DE0085D76E /* Measurement.swift */; };
+		CADD849524A3CF010085D76E /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849424A3CF010085D76E /* Reservation.swift */; };
+		CADD849724A418F00085D76E /* ReservationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849624A418F00085D76E /* ReservationsViewModel.swift */; };
+		CADD849924A6B0B70085D76E /* PlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849824A6B0B70085D76E /* PlanViewModel.swift */; };
+		CADD849B24A6B1640085D76E /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849A24A6B1630085D76E /* Plan.swift */; };
+		CADD849D24A6B1720085D76E /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849C24A6B1720085D76E /* Routine.swift */; };
+		CADD849F24A6B1840085D76E /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD849E24A6B1840085D76E /* Block.swift */; };
+		CADD84A124A6B1930085D76E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD84A024A6B1930085D76E /* Exercise.swift */; };
+		CADD84A324A6C71C0085D76E /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADD84A224A6C71C0085D76E /* RoutineCell.swift */; };
 		D4F8B7560CD831848D60B268 /* Pods_BrainMoveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057E38CD066E946370269415 /* Pods_BrainMoveTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +120,17 @@
 		CADD848724A053C40085D76E /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		CADD848924A054110085D76E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
+		CADD848D24A2BECF0085D76E /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
+		CADD848F24A2C0070085D76E /* MeasurementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsViewModel.swift; sourceTree = "<group>"; };
+		CADD849224A2C5DE0085D76E /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		CADD849424A3CF010085D76E /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		CADD849624A418F00085D76E /* ReservationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewModel.swift; sourceTree = "<group>"; };
+		CADD849824A6B0B70085D76E /* PlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewModel.swift; sourceTree = "<group>"; };
+		CADD849A24A6B1630085D76E /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		CADD849C24A6B1720085D76E /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		CADD849E24A6B1840085D76E /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		CADD84A024A6B1930085D76E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		CADD84A224A6C71C0085D76E /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +199,7 @@
 		CA9B282C24802F780003E870 /* BrainMove */ = {
 			isa = PBXGroup;
 			children = (
+				CADD849124A2C5C90085D76E /* Model */,
 				CADD847C249EAE540085D76E /* Cells */,
 				CADD8466249C3CB30085D76E /* Views */,
 				CA9B286C2480A61D0003E870 /* ViewModels */,
@@ -223,6 +246,7 @@
 				CADD8475249D94970085D76E /* UILabel+Ext.swift */,
 				CADD8481249ED0800085D76E /* UIView+Utils.swift */,
 				CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */,
+				CADD848D24A2BECF0085D76E /* String+Validations.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -255,6 +279,9 @@
 				CA9B286D2480A62E0003E870 /* LoginViewModel.swift */,
 				CA9B28732480C0AA0003E870 /* ForgotPasswordViewModel.swift */,
 				CADD848524A01F4F0085D76E /* LauncherViewModel.swift */,
+				CADD848F24A2C0070085D76E /* MeasurementsViewModel.swift */,
+				CADD849624A418F00085D76E /* ReservationsViewModel.swift */,
+				CADD849824A6B0B70085D76E /* PlanViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -274,8 +301,22 @@
 			isa = PBXGroup;
 			children = (
 				CADD847D249EAE860085D76E /* ReservationTableViewCell.swift */,
+				CADD84A224A6C71C0085D76E /* RoutineCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CADD849124A2C5C90085D76E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CADD849224A2C5DE0085D76E /* Measurement.swift */,
+				CADD849424A3CF010085D76E /* Reservation.swift */,
+				CADD849A24A6B1630085D76E /* Plan.swift */,
+				CADD849C24A6B1720085D76E /* Routine.swift */,
+				CADD849E24A6B1840085D76E /* Block.swift */,
+				CADD84A024A6B1930085D76E /* Exercise.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F6625B7241A9D34CD5D361E9 /* Frameworks */ = {
@@ -533,15 +574,25 @@
 			files = (
 				CA9B283224802F780003E870 /* ViewController.swift in Sources */,
 				CA9B285E248058A80003E870 /* UIColorExt.swift in Sources */,
+				CADD84A324A6C71C0085D76E /* RoutineCell.swift in Sources */,
+				CADD849524A3CF010085D76E /* Reservation.swift in Sources */,
 				CA9B28672480804C0003E870 /* ForgotPasswordViewController.swift in Sources */,
+				CADD849024A2C0070085D76E /* MeasurementsViewModel.swift in Sources */,
 				CADD848A24A054110085D76E /* LoadingView.swift in Sources */,
 				CADD84632482F62D0085D76E /* ViewController+Snackbar.swift in Sources */,
 				CADD848624A01F4F0085D76E /* LauncherViewModel.swift in Sources */,
 				CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */,
+				CADD849324A2C5DE0085D76E /* Measurement.swift in Sources */,
+				CADD849924A6B0B70085D76E /* PlanViewModel.swift in Sources */,
 				CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */,
+				CADD849724A418F00085D76E /* ReservationsViewModel.swift in Sources */,
 				CADD84652482FDA00085D76E /* CreateAccountViewController.swift in Sources */,
+				CADD849B24A6B1640085D76E /* Plan.swift in Sources */,
 				CADD8482249ED0800085D76E /* UIView+Utils.swift in Sources */,
 				CADD848C24A0558D0085D76E /* UIViewController+Spinner.swift in Sources */,
+				CADD84A124A6B1930085D76E /* Exercise.swift in Sources */,
+				CADD849F24A6B1840085D76E /* Block.swift in Sources */,
+				CADD848E24A2BECF0085D76E /* String+Validations.swift in Sources */,
 				CADD8474249D93B80085D76E /* MeasurementsViewController.swift in Sources */,
 				CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */,
 				CA9B28702480ABFC0003E870 /* ButtonExt.swift in Sources */,
@@ -550,6 +601,7 @@
 				CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */,
 				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,
 				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
+				CADD849D24A6B1720085D76E /* Routine.swift in Sources */,
 				CADD848424A01E0F0085D76E /* LauncherViewController.swift in Sources */,
 				CADD847B249E903F0085D76E /* ReservationsViewController.swift in Sources */,
 				CADD846C249C3DDB0085D76E /* MeasurementsView.swift in Sources */,

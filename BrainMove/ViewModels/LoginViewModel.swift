@@ -39,8 +39,8 @@ final class LoginViewModel : LoginViewModelType {
         let emailSubject = PublishSubject<String>()
         let passwordSubject = PublishSubject<String>()
         
-        let validEmail = emailSubject.asObservable()
-            .map{ !$0.isEmpty }
+        let validEmail: Observable = emailSubject.asObservable()
+            .map{ $0.isValidEmail() }
         
         let validPassword = passwordSubject.asObservable()
         .map{ !$0.isEmpty }

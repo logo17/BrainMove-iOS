@@ -25,7 +25,7 @@ class MeasurementsView : UIView {
         initSubViews()
     }
     
-    func initSubViews() {
+    private func initSubViews() {
         // standard initialization logic
         let nib = UINib(nibName: "MeasurementsView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
@@ -38,5 +38,10 @@ class MeasurementsView : UIView {
         contentView.layer.shadowRadius = 0.0
         contentView.layer.masksToBounds = false
         addSubview(contentView)
+    }
+    
+    func setValueData(value: String) {
+        self.valueText.text = value
+        self.contentView.backgroundColor = UIColor.init(hexString: "#f39200")
     }
 }

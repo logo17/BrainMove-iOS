@@ -14,4 +14,9 @@ extension UILabel {
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true
     }
+    
+    func toRoundedLabel(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }
