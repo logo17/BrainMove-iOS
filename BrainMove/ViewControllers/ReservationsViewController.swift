@@ -50,7 +50,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
         let cellIdentifier = "ReservationTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ReservationTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of ReservationTableViewCell.")
         }
         
         let reservation = reservations[indexPath.row]

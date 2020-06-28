@@ -65,15 +65,23 @@ class MeasurementsViewController : UIViewController {
         viewModel.output.measurement
             .drive(onNext:{ [weak self] measures in
                 self?.removeSpinner()
-                self?.fillData(measurement: measures)
+                if (measures.weight > 0) {
+                    self?.fillData(measurement: measures)
+                }
             })
             .disposed(by: disposeBag)
         
         viewModel.output.userName
-        .drive(onNext:{ [weak self] name in
-            self?.displayNameLabel.text = name
-        })
-        .disposed(by: disposeBag)
+            .drive(onNext:{ [weak self] name in
+                self?.displayNameLabel.text = name
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.logout
+            .drive(onNext:{ [weak self] isSuccess in
+                self?.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func fillData(measurement: Measurement) {
@@ -96,5 +104,8 @@ class MeasurementsViewController : UIViewController {
         dateFormatterPrint.dateFormat = "EEEE, dd MMMM, yyyy"
         dateFormatterPrint.locale = Locale(identifier: "ES")
         self.dateTextView.text = dateFormatterPrint.string(from: measurement.date).capitalized
+    }
+    @IBAction func logoutClicked(_ sender: Any) {
+        viewModel.logoutUser()
     }
 }

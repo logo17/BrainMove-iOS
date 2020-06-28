@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		1017FC243F7C197C2237B791 /* Pods_BrainMove_BrainMoveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138A0C5F4CD7D4661F28ACE0 /* Pods_BrainMove_BrainMoveUITests.framework */; };
 		5340F0926BCD031CC70D753A /* Pods_BrainMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45776C82ED13FF81F92706 /* Pods_BrainMove.framework */; };
+		CA5034BA24A7A35300C09F5E /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034B924A7A35300C09F5E /* BlockCell.swift */; };
+		CA5034BC24A7A49200C09F5E /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */; };
+		CA5034BE24A7B3A300C09F5E /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */; };
+		CA5034C024A7D53F00C09F5E /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034BF24A7D53F00C09F5E /* WorkoutDetailViewController.swift */; };
+		CA5034C224A7D6DA00C09F5E /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C124A7D6DA00C09F5E /* WorkoutCell.swift */; };
+		CA5034C724A803CB00C09F5E /* ExerciseExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */; };
+		CA5034C924A8050F00C09F5E /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C824A8050F00C09F5E /* ExerciseCell.swift */; };
+		CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */; };
 		CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282D24802F780003E870 /* AppDelegate.swift */; };
 		CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282F24802F780003E870 /* SceneDelegate.swift */; };
 		CA9B283224802F780003E870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B283124802F780003E870 /* ViewController.swift */; };
@@ -82,6 +90,14 @@
 		9365F6B2BD0A33361563341F /* Pods-BrainMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.release.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.release.xcconfig"; sourceTree = "<group>"; };
 		9443E15EE953B690926FF96F /* Pods-BrainMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.debug.xcconfig"; sourceTree = "<group>"; };
 		A8BFF04B72D8C0CD86F9CD0F /* Pods-BrainMove-BrainMoveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA5034B924A7A35300C09F5E /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
+		CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		CA5034BF24A7D53F00C09F5E /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
+		CA5034C124A7D6DA00C09F5E /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseExplanationViewController.swift; sourceTree = "<group>"; };
+		CA5034C824A8050F00C09F5E /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		CA9B282A24802F780003E870 /* BrainMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B282D24802F780003E870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9B282F24802F780003E870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +263,8 @@
 				CADD8481249ED0800085D76E /* UIView+Utils.swift */,
 				CADD848B24A0558D0085D76E /* UIViewController+Spinner.swift */,
 				CADD848D24A2BECF0085D76E /* String+Validations.swift */,
+				CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */,
+				CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -269,6 +287,9 @@
 				CADD847A249E903F0085D76E /* ReservationsViewController.swift */,
 				CADD847F249ECF590085D76E /* PlanViewController.swift */,
 				CADD848324A01E0F0085D76E /* LauncherViewController.swift */,
+				CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */,
+				CA5034BF24A7D53F00C09F5E /* WorkoutDetailViewController.swift */,
+				CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -302,6 +323,9 @@
 			children = (
 				CADD847D249EAE860085D76E /* ReservationTableViewCell.swift */,
 				CADD84A224A6C71C0085D76E /* RoutineCell.swift */,
+				CA5034B924A7A35300C09F5E /* BlockCell.swift */,
+				CA5034C124A7D6DA00C09F5E /* WorkoutCell.swift */,
+				CA5034C824A8050F00C09F5E /* ExerciseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -579,12 +603,16 @@
 				CA9B28672480804C0003E870 /* ForgotPasswordViewController.swift in Sources */,
 				CADD849024A2C0070085D76E /* MeasurementsViewModel.swift in Sources */,
 				CADD848A24A054110085D76E /* LoadingView.swift in Sources */,
+				CA5034BC24A7A49200C09F5E /* RoutineViewController.swift in Sources */,
 				CADD84632482F62D0085D76E /* ViewController+Snackbar.swift in Sources */,
 				CADD848624A01F4F0085D76E /* LauncherViewModel.swift in Sources */,
+				CA5034BA24A7A35300C09F5E /* BlockCell.swift in Sources */,
 				CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */,
+				CA5034C724A803CB00C09F5E /* ExerciseExplanationViewController.swift in Sources */,
 				CADD849324A2C5DE0085D76E /* Measurement.swift in Sources */,
 				CADD849924A6B0B70085D76E /* PlanViewModel.swift in Sources */,
 				CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */,
+				CA5034BE24A7B3A300C09F5E /* UIImageView+Download.swift in Sources */,
 				CADD849724A418F00085D76E /* ReservationsViewModel.swift in Sources */,
 				CADD84652482FDA00085D76E /* CreateAccountViewController.swift in Sources */,
 				CADD849B24A6B1640085D76E /* Plan.swift in Sources */,
@@ -595,11 +623,15 @@
 				CADD848E24A2BECF0085D76E /* String+Validations.swift in Sources */,
 				CADD8474249D93B80085D76E /* MeasurementsViewController.swift in Sources */,
 				CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */,
+				CA5034C924A8050F00C09F5E /* ExerciseCell.swift in Sources */,
 				CA9B28702480ABFC0003E870 /* ButtonExt.swift in Sources */,
+				CA5034C224A7D6DA00C09F5E /* WorkoutCell.swift in Sources */,
+				CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */,
 				CA9B28742480C0AA0003E870 /* ForgotPasswordViewModel.swift in Sources */,
 				CA9B286B2480A19C0003E870 /* UIViewController+TextField.swift in Sources */,
 				CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */,
 				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,
+				CA5034C024A7D53F00C09F5E /* WorkoutDetailViewController.swift in Sources */,
 				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
 				CADD849D24A6B1720085D76E /* Routine.swift in Sources */,
 				CADD848424A01E0F0085D76E /* LauncherViewController.swift in Sources */,

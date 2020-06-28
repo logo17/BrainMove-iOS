@@ -25,7 +25,8 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
     var output: MeasurementsViewModel.Output
     
     private let measurementsSubject = PublishSubject<Measurement>()
-    private let nameSubject = PublishSubject<String>()
+    private let nameSubject = BehaviorSubject<String>.init(value: "")
+    private let logoutSubject = PublishSubject<Bool>()
     
     struct Input {
         
@@ -34,17 +35,21 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
     struct Output {
         let measurement: Driver<Measurement>
         let userName: Driver<String>
+        let logout: Driver<Bool>
     }
     
     let db = Firestore.firestore()
 
     init() {
         self.input = Input()
-        self.output = Output(measurement: measurementsSubject.asObservable().asDriver(onErrorJustReturn: Measurement()), userName: nameSubject.asObservable().asDriver(onErrorJustReturn: ""))
+        self.output = Output(measurement: measurementsSubject.asObservable().asDriver(onErrorJustReturn: Measurement()), userName: nameSubject.asObservable().asDriver(onErrorJustReturn: ""), logout: logoutSubject.asObservable().asDriver(onErrorJustReturn: false))
         
         guard let user = Auth.auth().currentUser else {
             return
         }
+        
+        self.nameSubject.onNext(user.displayName ?? "")
+        
         db.collection("measures")
             .limit(to: 1)
             .order(by: "date", descending: true)
@@ -52,14 +57,30 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
             .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
+                        self.measurementsSubject.onNext(Measurement())
                     } else {
-                        for document in querySnapshot!.documents {
-                            if let measurement = Measurement(data: document.data()) {
-                                self.measurementsSubject.onNext(measurement)
-                                self.nameSubject.onNext(user.displayName ?? "")
+                        if(querySnapshot!.documents.isEmpty) {
+                            self.measurementsSubject.onNext(Measurement())
+                        } else {
+                            for document in querySnapshot!.documents {
+                                if let measurement = Measurement(data: document.data()) {
+                                    self.measurementsSubject.onNext(measurement)
+                                    
+                                }
                             }
                         }
                     }
             }
+    }
+    
+    func logoutUser () {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            logoutSubject.onNext(true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+            logoutSubject.onNext(false)
+        }
     }
 }

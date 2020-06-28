@@ -74,7 +74,7 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
         let cellIdentifier = "RoutineTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? RoutineCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of RoutineCell.")
         }
         
         let routine = plan.routines[indexPath.row]
@@ -83,5 +83,18 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showRoutine", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showRoutine") {
+            let indexPath : NSIndexPath = self.planTableView.indexPathForSelectedRow! as NSIndexPath
+            let routine = plan.routines[indexPath.row]
+            let destinationVC = segue.destination as! RoutineViewController
+            destinationVC.routine = routine
+        }
     }
 }

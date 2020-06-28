@@ -24,15 +24,15 @@ final class LauncherViewModel : LauncherViewModelType {
     struct Output {
         let isLoggedInUser: Driver<Bool>
     }
+    
+    private let loggedInUserSubject = PublishSubject<Bool>.init()
 
     init() {
-        let isLoggedInUserInput = BehaviorSubject<Bool>(value: true)
-        
-        let loggedInUser = isLoggedInUserInput.asObservable()
-            .map{ _ in Auth.auth().currentUser != nil }
-            
-        
-        self.output = Output(isLoggedInUser: loggedInUser.asObservable().asDriver(onErrorJustReturn: false))
+        self.output = Output(isLoggedInUser: loggedInUserSubject.asObservable().asDriver(onErrorJustReturn: false))
+    }
+    
+    func checkLoggedInUser () {
+        loggedInUserSubject.onNext(Auth.auth().currentUser != nil)
     }
     
 }

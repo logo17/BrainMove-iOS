@@ -19,6 +19,11 @@ class LauncherViewController : UIViewController {
         bindListeners()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.checkLoggedInUser()
+    }
+    
     private func bindListeners() {
         viewModel.output.isLoggedInUser
             .drive(onNext:{ [weak self] isLoggedIn in
