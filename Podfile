@@ -14,7 +14,8 @@ target 'BrainMove' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  pod 'AlamofireImage', '~> 4.1'
+  pod 'Charts'
+  pod 'TinyConstraints'
 
   target 'BrainMoveTests' do
     inherit! :search_paths

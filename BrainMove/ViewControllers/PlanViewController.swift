@@ -18,6 +18,7 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var planTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var planView: UIView!
+    var spinner: LoadingView?
     
     
     let viewModel = PlanViewModel()
@@ -29,6 +30,7 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
         initViews()
         bindListeners()
+        getPlan()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,12 +50,14 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
     private func bindListeners() {
         viewModel.output.plan
             .drive(onNext:{ [weak self] plan in
+                if let spinner = self?.spinner {
+                    self?.removeSpinner(spinner: spinner)
+                }
                 let dateFormatterPrint = DateFormatter()
                 dateFormatterPrint.dateFormat = "EEEE, dd MMMM, yyyy"
                 dateFormatterPrint.locale = Locale(identifier: "ES")
                 self?.planDateLabel.text = "Hasta: \(dateFormatterPrint.string(from: plan.toDate))"
                 self?.planTitleLabel.text = plan.name.uppercased()
-                self?.removeSpinner()
                 self?.plan = plan
                 self?.planTableView.reloadData()
                 self?.planView.isHidden = plan.routines.isEmpty
@@ -96,5 +100,10 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
             let destinationVC = segue.destination as! RoutineViewController
             destinationVC.routine = routine
         }
+    }
+    
+    private func getPlan() {
+        spinner = self.showSpinner(onView: self.view)
+        viewModel.getPlan()
     }
 }

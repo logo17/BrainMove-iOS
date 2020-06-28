@@ -376,12 +376,182 @@
         <!--Tendencias-->
         <scene sceneID="dIT-h4-V6Z">
             <objects>
-                <viewController title="Tendencias" id="3bF-Wo-Moa" sceneMemberID="viewController">
+                <viewController title="Tendencias" id="3bF-Wo-Moa" customClass="TrendsViewController" customModule="BrainMove" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5lP-sd-a3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEa-PA-sMx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAZ-dQ-AnQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWJ-d2-f4v">
+                                        <rect key="frame" x="45" y="8" width="324" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-MC-16b">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="32"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Nhs-MC-16b" firstAttribute="top" secondItem="OWJ-d2-f4v" secondAttribute="top" id="958-Wm-51Z"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nhs-MC-16b" secondAttribute="bottom" id="QHL-rj-Fvh"/>
+                                            <constraint firstAttribute="height" constant="32" id="YC6-AM-tO5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nhs-MC-16b" secondAttribute="trailing" id="cPK-kx-q4i"/>
+                                            <constraint firstItem="Nhs-MC-16b" firstAttribute="leading" secondItem="OWJ-d2-f4v" secondAttribute="leading" id="zT2-3l-0sq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-56-bUv">
+                                        <rect key="frame" x="157" y="72" width="100" height="65"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dSl-Ji-MHJ">
+                                                <rect key="frame" x="0.0" y="13.666666666666654" width="100" height="37.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13.38 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0f-ei-bkh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="19.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/05/2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNk-e2-SvU">
+                                                        <rect key="frame" x="0.0" y="23.333333333333343" width="100" height="14.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.57254901960000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="dSl-Ji-MHJ" firstAttribute="centerY" secondItem="NVg-56-bUv" secondAttribute="centerY" id="MWA-hJ-uDn"/>
+                                            <constraint firstAttribute="trailing" secondItem="dSl-Ji-MHJ" secondAttribute="trailing" id="Tz3-f8-VUl"/>
+                                            <constraint firstItem="dSl-Ji-MHJ" firstAttribute="leading" secondItem="NVg-56-bUv" secondAttribute="leading" id="bbk-j9-Q1Y"/>
+                                            <constraint firstAttribute="height" constant="65" id="cYd-ty-nBp"/>
+                                            <constraint firstAttribute="width" constant="100" id="oTy-5S-om9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYq-R9-6QM">
+                                        <rect key="frame" x="24" y="161" width="366" height="379"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRb-NI-IA6">
+                                        <rect key="frame" x="24" y="552" width="366" height="59"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OKA-l3-gcx">
+                                                <rect key="frame" x="0.0" y="0.0" width="582" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErW-I0-2Ez">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="DW7-Mi-wsh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbc-yH-Qx1">
+                                                        <rect key="frame" x="46" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="iqv-FZ-rH8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhv-xO-pkz">
+                                                        <rect key="frame" x="92" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="N7c-HO-ODw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6u-Qp-H7w">
+                                                        <rect key="frame" x="138" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="TnU-Zc-etC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d5-Se-ww8">
+                                                        <rect key="frame" x="184" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="nWx-VJ-Aeu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTN-lK-BYa">
+                                                        <rect key="frame" x="230" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="BmG-3W-ihJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-0Z-nhp">
+                                                        <rect key="frame" x="276" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="39N-s2-Xii"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAo-2P-Wtv">
+                                                        <rect key="frame" x="322" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="fI6-Tm-cLk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhC-gh-2U2">
+                                                        <rect key="frame" x="368" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="gZ6-oM-s3O"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdM-7f-ZRy">
+                                                        <rect key="frame" x="414" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="cFD-Re-cK1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68K-Ei-sV6">
+                                                        <rect key="frame" x="460" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="vhR-LP-Yxu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK2-Me-ubc">
+                                                        <rect key="frame" x="506" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="yCX-Qa-qhZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8X-WH-gfW">
+                                                        <rect key="frame" x="552" y="0.0" width="30" height="30"/>
+                                                        <connections>
+                                                            <action selector="onTrendItemClicked:" destination="3bF-Wo-Moa" eventType="touchUpInside" id="oVF-kg-3av"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="OKA-l3-gcx" secondAttribute="bottom" id="DRv-bS-cBM"/>
+                                            <constraint firstItem="OKA-l3-gcx" firstAttribute="leading" secondItem="WRb-NI-IA6" secondAttribute="leading" id="IJF-aU-Ivk"/>
+                                            <constraint firstAttribute="trailing" secondItem="OKA-l3-gcx" secondAttribute="trailing" id="bcE-cS-SQb"/>
+                                            <constraint firstItem="OKA-l3-gcx" firstAttribute="top" secondItem="8W7-vz-heG" secondAttribute="top" id="m37-bC-Rbr"/>
+                                            <constraint firstAttribute="height" constant="59" id="vpk-Td-AG9"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="FuP-me-TIr"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="8W7-vz-heG"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WRb-NI-IA6" secondAttribute="trailing" constant="24" id="FXs-eq-IRA"/>
+                                    <constraint firstItem="sYq-R9-6QM" firstAttribute="top" secondItem="NVg-56-bUv" secondAttribute="bottom" constant="24" id="G9S-5j-N3A"/>
+                                    <constraint firstItem="OWJ-d2-f4v" firstAttribute="top" secondItem="nAZ-dQ-AnQ" secondAttribute="top" constant="8" id="Lxv-aY-eay"/>
+                                    <constraint firstItem="WRb-NI-IA6" firstAttribute="leading" secondItem="nAZ-dQ-AnQ" secondAttribute="leading" constant="24" id="R6U-gT-FTo"/>
+                                    <constraint firstItem="WRb-NI-IA6" firstAttribute="top" secondItem="sYq-R9-6QM" secondAttribute="bottom" constant="12" id="UYF-Sd-4Ze"/>
+                                    <constraint firstAttribute="trailing" secondItem="OWJ-d2-f4v" secondAttribute="trailing" constant="45" id="Uhy-Og-kF8"/>
+                                    <constraint firstAttribute="bottom" secondItem="WRb-NI-IA6" secondAttribute="bottom" constant="32" id="XYP-XZ-UhY"/>
+                                    <constraint firstItem="sYq-R9-6QM" firstAttribute="leading" secondItem="nAZ-dQ-AnQ" secondAttribute="leading" constant="24" id="ays-hM-nvA"/>
+                                    <constraint firstItem="OWJ-d2-f4v" firstAttribute="leading" secondItem="nAZ-dQ-AnQ" secondAttribute="leading" constant="45" id="eOM-qv-5r8"/>
+                                    <constraint firstItem="NVg-56-bUv" firstAttribute="centerX" secondItem="nAZ-dQ-AnQ" secondAttribute="centerX" id="eQx-pe-lBm"/>
+                                    <constraint firstAttribute="trailing" secondItem="sYq-R9-6QM" secondAttribute="trailing" constant="24" id="rw1-oM-OGk"/>
+                                    <constraint firstItem="NVg-56-bUv" firstAttribute="top" secondItem="OWJ-d2-f4v" secondAttribute="bottom" constant="32" id="zSp-aX-Jd7"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEa-PA-sMx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="utF-6o-Osc">
@@ -412,15 +582,38 @@
                             <constraint firstItem="YMK-VJ-QFY" firstAttribute="bottom" secondItem="GEa-PA-sMx" secondAttribute="bottom" id="0Uq-Az-1Kk"/>
                             <constraint firstItem="YMK-VJ-QFY" firstAttribute="trailing" secondItem="GEa-PA-sMx" secondAttribute="trailing" id="0hC-uH-wL6"/>
                             <constraint firstItem="GEa-PA-sMx" firstAttribute="top" secondItem="YMK-VJ-QFY" secondAttribute="top" id="6mf-La-dDD"/>
+                            <constraint firstItem="nAZ-dQ-AnQ" firstAttribute="top" secondItem="YMK-VJ-QFY" secondAttribute="top" id="8vs-Ci-SYH"/>
+                            <constraint firstItem="nAZ-dQ-AnQ" firstAttribute="leading" secondItem="YMK-VJ-QFY" secondAttribute="leading" id="SYg-rU-xqk"/>
                             <constraint firstItem="GEa-PA-sMx" firstAttribute="leading" secondItem="YMK-VJ-QFY" secondAttribute="leading" id="dFk-0I-Ywq"/>
+                            <constraint firstItem="YMK-VJ-QFY" firstAttribute="bottom" secondItem="nAZ-dQ-AnQ" secondAttribute="bottom" id="oS8-tj-Vgp"/>
+                            <constraint firstItem="YMK-VJ-QFY" firstAttribute="trailing" secondItem="nAZ-dQ-AnQ" secondAttribute="trailing" id="pVm-PF-u6F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YMK-VJ-QFY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tendencias" image="ic_bottom_menu_trends_enabled" id="Zsc-xP-dJX"/>
+                    <connections>
+                        <outlet property="bmiButton" destination="sbc-yH-Qx1" id="7r4-DP-tc5"/>
+                        <outlet property="bmrButton" destination="lK2-Me-ubc" id="EPg-4W-rxW"/>
+                        <outlet property="bodyFatButton" destination="bhv-xO-pkz" id="7kj-1x-fzX"/>
+                        <outlet property="bodyWaterButton" destination="uzw-0Z-nhp" id="Xgn-8P-b9m"/>
+                        <outlet property="boneMassButton" destination="RdM-7f-ZRy" id="99g-qp-2Lb"/>
+                        <outlet property="chartContainer" destination="sYq-R9-6QM" id="ahD-mf-NqY"/>
+                        <outlet property="fatFreeBodyButton" destination="l6u-Qp-H7w" id="eHJ-Dh-x8b"/>
+                        <outlet property="metabolicalAgeButton" destination="v8X-WH-gfW" id="hqF-f9-9Ln"/>
+                        <outlet property="musscleMassButton" destination="HhC-gh-2U2" id="qmF-FQ-Jlz"/>
+                        <outlet property="proteinButton" destination="68K-Ei-sV6" id="xxf-J8-SZy"/>
+                        <outlet property="skeletalMusscleButton" destination="MAo-2P-Wtv" id="p29-oK-dxm"/>
+                        <outlet property="subcutaneousFatButton" destination="2d5-Se-ww8" id="1SY-Ms-Kxl"/>
+                        <outlet property="titleContainer" destination="OWJ-d2-f4v" id="XTm-R2-DWW"/>
+                        <outlet property="titleLabel" destination="Nhs-MC-16b" id="yp2-sF-ACP"/>
+                        <outlet property="valuesContainer" destination="NVg-56-bUv" id="lMC-ii-7cT"/>
+                        <outlet property="visceralFatButton" destination="hTN-lK-BYa" id="Wvk-KJ-MM2"/>
+                        <outlet property="weightButton" destination="ErW-I0-2Ez" id="ZxY-Gf-goH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vf-28-sOo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="2994"/>
+            <point key="canvasLocation" x="2218.840579710145" y="2993.4782608695655"/>
         </scene>
         <!--Plan-->
         <scene sceneID="tZ0-ex-R0J">

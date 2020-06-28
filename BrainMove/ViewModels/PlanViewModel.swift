@@ -38,7 +38,9 @@ final class PlanViewModel : PlanViewModelType {
     init() {
         self.input = Input()
         self.output = Output(plan: planSubject.asObservable().asDriver(onErrorJustReturn: Plan()))
-        
+    }
+    
+    func getPlan() {
         guard let user = Auth.auth().currentUser else {
             return
         }

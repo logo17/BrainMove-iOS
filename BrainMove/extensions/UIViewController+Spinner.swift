@@ -9,22 +9,19 @@
 import Foundation
 import UIKit
 
-var vSpinner : UIView?
-
 extension UIViewController {
-    func showSpinner(onView : UIView) {
+    func showSpinner(onView : UIView) -> LoadingView {
         let spinnerView = LoadingView.init(frame: onView.bounds)
         DispatchQueue.main.async {
             onView.addSubview(spinnerView)
         }
         
-        vSpinner = spinnerView
+        return spinnerView
     }
     
-    func removeSpinner() {
+    func removeSpinner(spinner : LoadingView) {
         DispatchQueue.main.async {
-            vSpinner?.removeFromSuperview()
-            vSpinner = nil
+            spinner.removeFromSuperview()
         }
     }
 }

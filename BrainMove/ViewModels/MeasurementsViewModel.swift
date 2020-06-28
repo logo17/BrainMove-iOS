@@ -43,34 +43,6 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
     init() {
         self.input = Input()
         self.output = Output(measurement: measurementsSubject.asObservable().asDriver(onErrorJustReturn: Measurement()), userName: nameSubject.asObservable().asDriver(onErrorJustReturn: ""), logout: logoutSubject.asObservable().asDriver(onErrorJustReturn: false))
-        
-        guard let user = Auth.auth().currentUser else {
-            return
-        }
-        
-        self.nameSubject.onNext(user.displayName ?? "")
-        
-        db.collection("measures")
-            .limit(to: 1)
-            .order(by: "date", descending: true)
-            .whereField("user_id", isEqualTo: user.uid)
-            .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                        self.measurementsSubject.onNext(Measurement())
-                    } else {
-                        if(querySnapshot!.documents.isEmpty) {
-                            self.measurementsSubject.onNext(Measurement())
-                        } else {
-                            for document in querySnapshot!.documents {
-                                if let measurement = Measurement(data: document.data()) {
-                                    self.measurementsSubject.onNext(measurement)
-                                    
-                                }
-                            }
-                        }
-                    }
-            }
     }
     
     func logoutUser () {
@@ -81,6 +53,34 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
             logoutSubject.onNext(false)
+        }
+    }
+    
+    func getMeasures() {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        self.nameSubject.onNext(user.displayName ?? "")
+        db.collection("measures")
+        .limit(to: 1)
+        .order(by: "date", descending: true)
+        .whereField("user_id", isEqualTo: user.uid)
+        .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    self.measurementsSubject.onNext(Measurement())
+                } else {
+                    if(querySnapshot!.documents.isEmpty) {
+                        self.measurementsSubject.onNext(Measurement())
+                    } else {
+                        for document in querySnapshot!.documents {
+                            if let measurement = Measurement(data: document.data()) {
+                                self.measurementsSubject.onNext(measurement)
+                                
+                            }
+                        }
+                    }
+                }
         }
     }
 }

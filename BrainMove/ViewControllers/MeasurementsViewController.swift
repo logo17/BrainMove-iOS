@@ -30,12 +30,14 @@ class MeasurementsViewController : UIViewController {
     
     let viewModel = MeasurementsViewModel()
     var disposeBag = DisposeBag()
+    var spinner: LoadingView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        initViews()
         bindListeners()
+        initViews()
+        getMeasures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +46,6 @@ class MeasurementsViewController : UIViewController {
     }
 
     private func initViews() {
-        self.showSpinner(onView: self.view)
         dateTextView.toPrimaryRounded()
         weightView.labelText.text = "Peso".uppercased()
         bmiView.labelText.text = "BMI".uppercased()
@@ -64,7 +65,6 @@ class MeasurementsViewController : UIViewController {
     private func bindListeners() {
         viewModel.output.measurement
             .drive(onNext:{ [weak self] measures in
-                self?.removeSpinner()
                 if (measures.weight > 0) {
                     self?.fillData(measurement: measures)
                 }
@@ -85,6 +85,9 @@ class MeasurementsViewController : UIViewController {
     }
     
     private func fillData(measurement: Measurement) {
+        if let spinner = self.spinner {
+            self.removeSpinner(spinner: spinner)
+        }
         self.weightView.setValueData(value: "\(measurement.weight) kg")
         self.bmiView.setValueData(value: "\(measurement.bmi)")
         self.bodyFatView.setValueData(value: "\(measurement.bodyFat) %")
@@ -107,5 +110,10 @@ class MeasurementsViewController : UIViewController {
     }
     @IBAction func logoutClicked(_ sender: Any) {
         viewModel.logoutUser()
+    }
+    
+    private func getMeasures() {
+        spinner = self.showSpinner(onView: self.view)
+        viewModel.getMeasures()
     }
 }

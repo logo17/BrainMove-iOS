@@ -17,6 +17,7 @@
 		CA5034C724A803CB00C09F5E /* ExerciseExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */; };
 		CA5034C924A8050F00C09F5E /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C824A8050F00C09F5E /* ExerciseCell.swift */; };
 		CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */; };
+		CA5034CF24A91C2B00C09F5E /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */; };
 		CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282D24802F780003E870 /* AppDelegate.swift */; };
 		CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282F24802F780003E870 /* SceneDelegate.swift */; };
 		CA9B283224802F780003E870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B283124802F780003E870 /* ViewController.swift */; };
@@ -98,6 +99,7 @@
 		CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseExplanationViewController.swift; sourceTree = "<group>"; };
 		CA5034C824A8050F00C09F5E /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		CA9B282A24802F780003E870 /* BrainMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B282D24802F780003E870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9B282F24802F780003E870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */,
 				CA5034BF24A7D53F00C09F5E /* WorkoutDetailViewController.swift */,
 				CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */,
+				CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				CA9B286B2480A19C0003E870 /* UIViewController+TextField.swift in Sources */,
 				CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */,
 				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,
+				CA5034CF24A91C2B00C09F5E /* TrendsViewController.swift in Sources */,
 				CA5034C024A7D53F00C09F5E /* WorkoutDetailViewController.swift in Sources */,
 				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
 				CADD849D24A6B1720085D76E /* Routine.swift in Sources */,

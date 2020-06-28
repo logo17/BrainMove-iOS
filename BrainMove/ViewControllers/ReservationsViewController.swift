@@ -19,6 +19,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tabContainer: UIView!
     @IBOutlet weak var emptyView: UIView!
     let tabBar = MDCTabBar()
+    var spinner: LoadingView?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,7 +38,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reservation = reservations[indexPath.row]
         if (reservation.availableSpaces > 0 || reservation.isReserved) {
-            self.showSpinner(onView: self.view)
+            spinner = self.showSpinner(onView: self.view)
             if (reservation.isReserved) {
                 self.viewModel.releaseReservation(reservation: reservation, isToday: tabBar.selectedItem?.tag == 0)
             } else {
@@ -121,7 +122,9 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     private func bindListeners() {
         viewModel.output.reservations
             .drive(onNext:{ [weak self] reservations in
-                self?.removeSpinner()
+                if let spinner = self?.spinner {
+                    self?.removeSpinner(spinner: spinner)
+                }
                 self?.reservations = reservations
                 self?.tableView.reloadData()
                 self?.tableView.isHidden = reservations.isEmpty
@@ -131,7 +134,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     }
     
     private func getReservations(isToday: Bool) {
-        self.showSpinner(onView: self.view)
+        spinner = self.showSpinner(onView: self.view)
         viewModel.getReservations(isToday: isToday)
     }
 }

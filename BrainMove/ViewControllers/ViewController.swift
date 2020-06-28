@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var emailController: MDCTextInputControllerFilled?
     var passwordController: MDCTextInputControllerFilled?
     
+    var spinner: LoadingView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -71,7 +73,11 @@ class ViewController: UIViewController {
         
         viewModel.output.successLogin
         .drive(onNext:{ [weak self] isEnabled in
-            self?.removeSpinner()
+            if let spinner = self?.spinner {
+                self?.removeSpinner(spinner: spinner)
+            }
+            self?.email.text = ""
+            self?.password.text = ""
             self?.performSegue(withIdentifier: "showMainScreenFromLogin", sender: self)
         })
         .disposed(by: disposeBag)
@@ -83,7 +89,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "showCreateAccount", sender: self)
     }
     @IBAction func loginClicked(_ sender: Any) {
-        self.showSpinner(onView: self.view)
+        spinner = self.showSpinner(onView: self.view)
         viewModel.loginUser(email: self.email.text ?? "", password: self.password.text ?? "")
     }
 }

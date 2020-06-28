@@ -16,6 +16,7 @@ class ForgotPasswordViewController : UIViewController {
     var disposeBag = DisposeBag()
     let viewModel = ForgotPasswordViewModel()
     
+    var spinner: LoadingView?
     @IBOutlet weak var sendRecoveryEmailButton: UIButton!
     @IBOutlet weak var email:  MDCTextField!
     var emailController: MDCTextInputControllerFilled?
@@ -57,7 +58,9 @@ class ForgotPasswordViewController : UIViewController {
         
         viewModel.output.emailSent
         .drive(onNext:{ [weak self] isSuccess in
-            self?.removeSpinner()
+            if let spinner = self?.spinner {
+                self?.removeSpinner(spinner: spinner)
+            }
             self?.dismiss(animated: true, completion: {
                 self?.showSnackbar(text: self?.getLocalizedString(key: "reset_password_success") ?? "")
             })
@@ -66,7 +69,7 @@ class ForgotPasswordViewController : UIViewController {
     }
     
     @IBAction func sendRecoveryEmail(_ sender: Any) {
-        self.showSpinner(onView: self.view)
+        spinner = self.showSpinner(onView: self.view)
         self.viewModel.resetPassword(email: self.email.text ?? "")
     }
 }
