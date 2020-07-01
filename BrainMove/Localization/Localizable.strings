@@ -17,3 +17,7 @@
 "resend_button_text" = "Reenviar";
 "general_error_title" = "Ha ocurrido un error";
 "general_error_description" = "Revisá los campos de nuevo e intentá de nuevo.";
+"general_measurements_error_description" = "No hemos podido cargar tus medidas.";
+"general_plan_error_description" = "No hemos podido cargar tu plan.";
+"general_trends_error_description" = "No hemos podido cargar tus tendencias.";
+"general_reservations_error_description" = "No hemos podido cargar las clases.";

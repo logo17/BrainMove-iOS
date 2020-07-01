@@ -37,7 +37,7 @@ class MeasurementsViewController : UIViewController {
     
         bindListeners()
         initViews()
-        getMeasures()
+        viewModel.getMeasures()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,12 +82,21 @@ class MeasurementsViewController : UIViewController {
                 self?.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.output.isLoading
+            .drive(onNext:{ [weak self] isLoading in
+                self?.handleLoadingSpinner(isLoading: isLoading)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showError
+            .drive(onNext:{ [weak self] showError in
+                self?.showAlert(title: self?.getLocalizedString(key: "general_error_title") ?? "", description: self?.getLocalizedString(key: "general_measurements_error_description") ?? "", completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func fillData(measurement: Measurement) {
-        if let spinner = self.spinner {
-            self.removeSpinner(spinner: spinner)
-        }
         self.weightView.setValueData(value: "\(measurement.weight) kg")
         self.bmiView.setValueData(value: "\(measurement.bmi)")
         self.bodyFatView.setValueData(value: "\(measurement.bodyFat) %")
@@ -112,8 +121,13 @@ class MeasurementsViewController : UIViewController {
         viewModel.logoutUser()
     }
     
-    private func getMeasures() {
-        spinner = self.showSpinner(onView: self.view)
-        viewModel.getMeasures()
+    private func handleLoadingSpinner(isLoading: Bool) {
+        if (isLoading) {
+            spinner = self.showSpinner(onView: self.view)
+        } else {
+            if let spinner = self.spinner {
+                self.removeSpinner(spinner: spinner)
+            }
+        }
     }
 }

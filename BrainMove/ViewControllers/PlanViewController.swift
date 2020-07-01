@@ -30,7 +30,7 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
         initViews()
         bindListeners()
-        getPlan()
+        viewModel.getPlan()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,9 +50,6 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
     private func bindListeners() {
         viewModel.output.plan
             .drive(onNext:{ [weak self] plan in
-                if let spinner = self?.spinner {
-                    self?.removeSpinner(spinner: spinner)
-                }
                 let dateFormatterPrint = DateFormatter()
                 dateFormatterPrint.dateFormat = "EEEE, dd MMMM, yyyy"
                 dateFormatterPrint.locale = Locale(identifier: "ES")
@@ -62,6 +59,18 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
                 self?.planTableView.reloadData()
                 self?.planView.isHidden = plan.routines.isEmpty
                 self?.emptyView.isHidden = !plan.routines.isEmpty
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.isLoading
+            .drive(onNext:{ [weak self] isLoading in
+                self?.handleLoadingSpinner(isLoading: isLoading)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showError
+            .drive(onNext:{ [weak self] showError in
+                self?.showAlert(title: self?.getLocalizedString(key: "general_error_title") ?? "", description: self?.getLocalizedString(key: "general_plan_error_description") ?? "", completion: nil)
             })
             .disposed(by: disposeBag)
     }
@@ -102,8 +111,13 @@ class PlanViewController : UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    private func getPlan() {
-        spinner = self.showSpinner(onView: self.view)
-        viewModel.getPlan()
+    private func handleLoadingSpinner(isLoading: Bool) {
+        if (isLoading) {
+            spinner = self.showSpinner(onView: self.view)
+        } else {
+            if let spinner = self.spinner {
+                self.removeSpinner(spinner: spinner)
+            }
+        }
     }
 }

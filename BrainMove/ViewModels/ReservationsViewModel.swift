@@ -26,6 +26,9 @@ final class ReservationsViewModel : ReservationsViewModelType {
     var output: ReservationsViewModel.Output
     
     private let reservationsSubject = PublishSubject<Array<Reservation>>()
+    private let isLoadingSubject = PublishSubject<Bool>()
+    private let showErrorSubject = PublishSubject<Bool>()
+    
     
     struct Input {
         
@@ -33,13 +36,15 @@ final class ReservationsViewModel : ReservationsViewModelType {
 
     struct Output {
         let reservations: Driver<Array<Reservation>>
+        let isLoading: Driver<Bool>
+        let showError: Driver<Bool>
     }
     
     let db = Firestore.firestore()
 
     init() {
         self.input = Input()
-        self.output = Output(reservations: reservationsSubject.asObservable().asDriver(onErrorJustReturn: Array()))
+        self.output = Output(reservations: reservationsSubject.asObservable().asDriver(onErrorJustReturn: Array()), isLoading: isLoadingSubject.asObservable().asDriver(onErrorJustReturn: false), showError: showErrorSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
     }
     
     func getReservations(isToday: Bool) {
@@ -47,6 +52,7 @@ final class ReservationsViewModel : ReservationsViewModelType {
             return
         }
         
+        self.isLoadingSubject.onNext(true)
         let currentDate = Date()
         let todayStart = Calendar.current.date(bySettingHour: 00, minute: 00, second: 00, of: currentDate)
         var components = DateComponents()
@@ -61,8 +67,9 @@ final class ReservationsViewModel : ReservationsViewModelType {
             .whereField("date", isGreaterThan: Timestamp(date: fromDate))
             .whereField("date", isLessThan: Timestamp(date: toDate))
             .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
+                    self.isLoadingSubject.onNext(false)
+                    if err != nil {
+                        self.showErrorSubject.onNext(true)
                     } else {
                         var reservations = [Reservation]()
                         for document in querySnapshot!.documents {
@@ -79,12 +86,14 @@ final class ReservationsViewModel : ReservationsViewModelType {
         guard let user = Auth.auth().currentUser else {
             return
         }
+        self.isLoadingSubject.onNext(true)
         db.collection("reservation").document(reservation.id)
             .updateData([
                 "spaces": FieldValue.arrayUnion([user.uid])
             ]) { (error) in
-                if let err = error {
-                    print("Error getting documents: \(err)")
+                self.isLoadingSubject.onNext(false)
+                if error != nil {
+                    self.showErrorSubject.onNext(true)
                 } else {
                     self.getReservations(isToday: isToday)
                 }
@@ -96,12 +105,14 @@ final class ReservationsViewModel : ReservationsViewModelType {
         guard let user = Auth.auth().currentUser else {
             return
         }
+        self.isLoadingSubject.onNext(true)
         db.collection("reservation").document(reservation.id)
             .updateData([
                 "spaces": FieldValue.arrayRemove([user.uid])
             ]) { (error) in
-                if let err = error {
-                    print("Error getting documents: \(err)")
+                self.isLoadingSubject.onNext(false)
+                if error != nil {
+                    self.showErrorSubject.onNext(true)
                 } else {
                     self.getReservations(isToday: isToday)
                 }

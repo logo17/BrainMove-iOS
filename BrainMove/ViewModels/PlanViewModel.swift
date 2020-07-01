@@ -26,6 +26,8 @@ final class PlanViewModel : PlanViewModelType {
     
     let db = Firestore.firestore()
     private let planSubject = BehaviorSubject<Plan>(value: Plan())
+    private let isLoadingSubject = PublishSubject<Bool>()
+    private let showErrorSubject = PublishSubject<Bool>()
     
     struct Input {
         
@@ -33,31 +35,35 @@ final class PlanViewModel : PlanViewModelType {
 
     struct Output {
         let plan: Driver<Plan>
+        let isLoading: Driver<Bool>
+        let showError: Driver<Bool>
     }
     
     init() {
         self.input = Input()
-        self.output = Output(plan: planSubject.asObservable().asDriver(onErrorJustReturn: Plan()))
+        self.output = Output(plan: planSubject.asObservable().asDriver(onErrorJustReturn: Plan()), isLoading: isLoadingSubject.asObservable().asDriver(onErrorJustReturn: false), showError: showErrorSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
     }
     
     func getPlan() {
         guard let user = Auth.auth().currentUser else {
             return
         }
+        self.isLoadingSubject.onNext(true)
         db.collection("plan")
             .limit(to: 1)
             .whereField("toDate", isGreaterThan: Timestamp(date: Date()))
             .whereField("userId", isEqualTo: user.uid)
             .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            if let plan = Plan(data: document.data()) {
-                                self.planSubject.onNext(plan)
-                            }
+                self.isLoadingSubject.onNext(false)
+                if err != nil {
+                    self.showErrorSubject.onNext(true)
+                } else {
+                    for document in querySnapshot!.documents {
+                        if let plan = Plan(data: document.data()) {
+                            self.planSubject.onNext(plan)
                         }
                     }
+                }
             }
     }
 }

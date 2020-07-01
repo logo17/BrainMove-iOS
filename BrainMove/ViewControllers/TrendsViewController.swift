@@ -52,7 +52,7 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         
         initViews()
         bindListeners()
-        getTrends()
+        viewModel.getMeasures()
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -114,20 +114,24 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
     private func bindListeners() {
         viewModel.output.measurements
             .drive(onNext:{ [weak self] measures in
-                if let spinner = self?.spinner {
-                    self?.removeSpinner(spinner: spinner)
-                }
                 self?.emptyContainer.isHidden = !measures.isEmpty
                 self?.infoContainer.isHidden = measures.isEmpty
                 self?.measurements = measures
                 self?.setChartData(yValues: self?.getChartDataEntryFromMeasures(tag: 0) ?? [])
             })
             .disposed(by: disposeBag)
-    }
-    
-    private func getTrends() {
-        spinner = self.showSpinner(onView: self.view)
-        viewModel.getMeasures()
+        
+        viewModel.output.isLoading
+            .drive(onNext:{ [weak self] isLoading in
+                self?.handleLoadingSpinner(isLoading: isLoading)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showError
+            .drive(onNext:{ [weak self] showError in
+                self?.showAlert(title: self?.getLocalizedString(key: "general_error_title") ?? "", description: self?.getLocalizedString(key: "general_trends_error_description") ?? "", completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
     func setChartData(yValues:[ChartDataEntry]) {
@@ -308,5 +312,15 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         }
         
         return (dateResult, measurementResult)
+    }
+    
+    private func handleLoadingSpinner(isLoading: Bool) {
+        if (isLoading) {
+            spinner = self.showSpinner(onView: self.view)
+        } else {
+            if let spinner = self.spinner {
+                self.removeSpinner(spinner: spinner)
+            }
+        }
     }
 }

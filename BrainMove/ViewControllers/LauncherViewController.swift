@@ -14,15 +14,15 @@ class LauncherViewController : UIViewController {
     let viewModel = LauncherViewModel()
     var disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         bindListeners()
+        viewModel.checkLoggedInUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-        viewModel.checkLoggedInUser()
     }
     
     private func bindListeners() {

@@ -24,7 +24,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     func tabBar(_ tabBar: MDCTabBar, didSelect item: UITabBarItem) {
-        self.getReservations(isToday: item.tag == 0)
+        viewModel.getReservations(isToday: item.tag == 0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +38,6 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reservation = reservations[indexPath.row]
         if (reservation.availableSpaces > 0 || reservation.isReserved) {
-            spinner = self.showSpinner(onView: self.view)
             if (reservation.isReserved) {
                 self.viewModel.releaseReservation(reservation: reservation, isToday: tabBar.selectedItem?.tag == 0)
             } else {
@@ -89,7 +88,7 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     
         initViews()
         bindListeners()
-        self.getReservations(isToday: true)
+        viewModel.getReservations(isToday: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,19 +121,33 @@ class ReservationViewController : UIViewController, UITableViewDelegate, UITable
     private func bindListeners() {
         viewModel.output.reservations
             .drive(onNext:{ [weak self] reservations in
-                if let spinner = self?.spinner {
-                    self?.removeSpinner(spinner: spinner)
-                }
                 self?.reservations = reservations
                 self?.tableView.reloadData()
                 self?.tableView.isHidden = reservations.isEmpty
                 self?.emptyView.isHidden = !reservations.isEmpty
             })
             .disposed(by: disposeBag)
+        
+        viewModel.output.isLoading
+            .drive(onNext:{ [weak self] isLoading in
+                self?.handleLoadingSpinner(isLoading: isLoading)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.showError
+            .drive(onNext:{ [weak self] showError in
+                self?.showAlert(title: self?.getLocalizedString(key: "general_error_title") ?? "", description: self?.getLocalizedString(key: "general_reservations_error_description") ?? "", completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
-    private func getReservations(isToday: Bool) {
-        spinner = self.showSpinner(onView: self.view)
-        viewModel.getReservations(isToday: isToday)
+    private func handleLoadingSpinner(isLoading: Bool) {
+        if (isLoading) {
+            spinner = self.showSpinner(onView: self.view)
+        } else {
+            if let spinner = self.spinner {
+                self.removeSpinner(spinner: spinner)
+            }
+        }
     }
 }

@@ -32,19 +32,14 @@ final class LauncherViewModel : LauncherViewModelType {
     }
     
     func checkLoggedInUser () {
-        loggedInUserSubject.onNext(Auth.auth().currentUser != nil)
-        
-        
         if let user = Auth.auth().currentUser {
             if (user.isEmailVerified) {
                 user.getIDTokenResult(completion: { (result, error) in
                     guard let admin = result?.claims["admin"] as? NSNumber else {
-                        self.loggedInUserSubject.onNext(false)
+                        self.loggedInUserSubject.onNext(true)
                         return
                     }
-                    if !admin.boolValue {
-                        self.loggedInUserSubject.onNext(true)
-                    }
+                    self.loggedInUserSubject.onNext(!admin.boolValue)
                 })
             } else {
                 self.loggedInUserSubject.onNext(false)
