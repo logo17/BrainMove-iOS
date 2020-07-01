@@ -169,16 +169,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-2p-vX8">
-                                <rect key="frame" x="24" y="68" width="366" height="102"/>
+                                <rect key="frame" x="24" y="68" width="366" height="72.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa el correo electrónico registrado en BrainMove para enviar un enlace de recuperación de contraseña." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-lC-IUU">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-ap-Vvo" customClass="MDCTextField">
-                                        <rect key="frame" x="0.0" y="68" width="366" height="34"/>
+                                        <rect key="frame" x="0.0" y="38.666666666666671" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -381,7 +381,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAZ-dQ-AnQ">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAZ-dQ-AnQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWJ-d2-f4v">
@@ -403,7 +403,7 @@
                                             <constraint firstItem="Nhs-MC-16b" firstAttribute="leading" secondItem="OWJ-d2-f4v" secondAttribute="leading" id="zT2-3l-0sq"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-56-bUv">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-56-bUv">
                                         <rect key="frame" x="157" y="72" width="100" height="65"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dSl-Ji-MHJ">
@@ -551,7 +551,7 @@
                                     <constraint firstItem="NVg-56-bUv" firstAttribute="top" secondItem="OWJ-d2-f4v" secondAttribute="bottom" constant="32" id="zSp-aX-Jd7"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEa-PA-sMx">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEa-PA-sMx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="utF-6o-Osc">
@@ -598,7 +598,11 @@
                         <outlet property="bodyWaterButton" destination="uzw-0Z-nhp" id="Xgn-8P-b9m"/>
                         <outlet property="boneMassButton" destination="RdM-7f-ZRy" id="99g-qp-2Lb"/>
                         <outlet property="chartContainer" destination="sYq-R9-6QM" id="ahD-mf-NqY"/>
+                        <outlet property="emptyContainer" destination="GEa-PA-sMx" id="Amo-6T-9LZ"/>
                         <outlet property="fatFreeBodyButton" destination="l6u-Qp-H7w" id="eHJ-Dh-x8b"/>
+                        <outlet property="highlitedMeasureDate" destination="GNk-e2-SvU" id="Z83-Kw-xd7"/>
+                        <outlet property="highlitedMeasureValue" destination="G0f-ei-bkh" id="Q5c-bo-8qY"/>
+                        <outlet property="infoContainer" destination="nAZ-dQ-AnQ" id="cnH-On-FKO"/>
                         <outlet property="metabolicalAgeButton" destination="v8X-WH-gfW" id="hqF-f9-9Ln"/>
                         <outlet property="musscleMassButton" destination="HhC-gh-2U2" id="qmF-FQ-Jlz"/>
                         <outlet property="proteinButton" destination="68K-Ei-sV6" id="xxf-J8-SZy"/>
@@ -1418,17 +1422,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cjr-we-1WJ">
-                                <rect key="frame" x="24" y="52" width="366" height="187"/>
+                                <rect key="frame" x="24" y="52" width="366" height="169"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mom-cL-iTF">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="61"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="43"/>
                                         <string key="text">Ingresa los siguientes datos para crear una cuenta en BrainMove. Posteriormente deberás verificar el correo electrónico ingresado.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Aiz-f5-RHx">
-                                        <rect key="frame" x="0.0" y="69" width="366" height="118"/>
+                                        <rect key="frame" x="0.0" y="51" width="366" height="118"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8R-P4-9Zt" customClass="MDCTextField">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
@@ -1468,6 +1472,7 @@
                                         </state>
                                         <state key="disabled" title="INICIAR SESIÓN"/>
                                         <connections>
+                                            <action selector="createAccountClicked:" destination="KSg-Ed-LaH" eventType="touchUpInside" id="Mh6-yR-hky"/>
                                             <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JyU-Br-khp"/>
                                             <action selector="sendRecoveryEmail:" destination="sSq-bx-XD5" eventType="touchUpInside" id="zUb-Z4-7lg"/>
                                         </connections>

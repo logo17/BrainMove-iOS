@@ -9,3 +9,11 @@
 "password_placeholder" = "Contraseña";
 "fullname_placeholder" = "Nombre completo";
 "reset_password_success" = "Se ha enviado un enlace a tu correo para reestablecer la contraseña";
+"app_name" = "BrainMove";
+"create_account_success" = "Se ha enviado un enlace a tu correo para validar la cuenta";
+"email_not_verified_title" = "Validar correo electrónico";
+"email_verification_sent" = "Por favor revisá tu correo electrónico registrado en BrainMove para verificar tu cuenta.";
+"accept_button_text" = "Aceptar";
+"resend_button_text" = "Reenviar";
+"general_error_title" = "Ha ocurrido un error";
+"general_error_description" = "Revisá los campos de nuevo e intentá de nuevo.";

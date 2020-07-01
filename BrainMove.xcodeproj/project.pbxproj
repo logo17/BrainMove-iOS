@@ -18,6 +18,9 @@
 		CA5034C924A8050F00C09F5E /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034C824A8050F00C09F5E /* ExerciseCell.swift */; };
 		CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */; };
 		CA5034CF24A91C2B00C09F5E /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */; };
+		CA5034D124A98E0300C09F5E /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034D024A98E0300C09F5E /* TrendsViewModel.swift */; };
+		CA5034D724AAAD0E00C09F5E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034D624AAAD0E00C09F5E /* CreateAccountViewModel.swift */; };
+		CA5034D924AC22AA00C09F5E /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034D824AC22AA00C09F5E /* UIViewController+Error.swift */; };
 		CA9B282E24802F780003E870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282D24802F780003E870 /* AppDelegate.swift */; };
 		CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B282F24802F780003E870 /* SceneDelegate.swift */; };
 		CA9B283224802F780003E870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B283124802F780003E870 /* ViewController.swift */; };
@@ -100,6 +103,9 @@
 		CA5034C824A8050F00C09F5E /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		CA5034D024A98E0300C09F5E /* TrendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewModel.swift; sourceTree = "<group>"; };
+		CA5034D624AAAD0E00C09F5E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		CA5034D824AC22AA00C09F5E /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		CA9B282A24802F780003E870 /* BrainMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B282D24802F780003E870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9B282F24802F780003E870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 				CADD848D24A2BECF0085D76E /* String+Validations.swift */,
 				CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */,
 				CA5034CC24A80B6600C09F5E /* UIImage+Gif.swift */,
+				CA5034D824AC22AA00C09F5E /* UIViewController+Error.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -306,6 +313,8 @@
 				CADD848F24A2C0070085D76E /* MeasurementsViewModel.swift */,
 				CADD849624A418F00085D76E /* ReservationsViewModel.swift */,
 				CADD849824A6B0B70085D76E /* PlanViewModel.swift */,
+				CA5034D024A98E0300C09F5E /* TrendsViewModel.swift */,
+				CA5034D624AAAD0E00C09F5E /* CreateAccountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -615,6 +624,7 @@
 				CADD849324A2C5DE0085D76E /* Measurement.swift in Sources */,
 				CADD849924A6B0B70085D76E /* PlanViewModel.swift in Sources */,
 				CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */,
+				CA5034D724AAAD0E00C09F5E /* CreateAccountViewModel.swift in Sources */,
 				CA5034BE24A7B3A300C09F5E /* UIImageView+Download.swift in Sources */,
 				CADD849724A418F00085D76E /* ReservationsViewModel.swift in Sources */,
 				CADD84652482FDA00085D76E /* CreateAccountViewController.swift in Sources */,
@@ -631,6 +641,8 @@
 				CA5034C224A7D6DA00C09F5E /* WorkoutCell.swift in Sources */,
 				CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */,
 				CA9B28742480C0AA0003E870 /* ForgotPasswordViewModel.swift in Sources */,
+				CA5034D924AC22AA00C09F5E /* UIViewController+Error.swift in Sources */,
+				CA5034D124A98E0300C09F5E /* TrendsViewModel.swift in Sources */,
 				CA9B286B2480A19C0003E870 /* UIViewController+TextField.swift in Sources */,
 				CADD8476249D94970085D76E /* UILabel+Ext.swift in Sources */,
 				CA9B286124805CB20003E870 /* MDCTextInputControllerFilledExt.swift in Sources */,

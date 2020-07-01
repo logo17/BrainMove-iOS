@@ -57,15 +57,17 @@ class ForgotPasswordViewController : UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.output.emailSent
-        .drive(onNext:{ [weak self] isSuccess in
-            if let spinner = self?.spinner {
-                self?.removeSpinner(spinner: spinner)
-            }
-            self?.dismiss(animated: true, completion: {
-                self?.showSnackbar(text: self?.getLocalizedString(key: "reset_password_success") ?? "")
+            .drive(onNext:{ [weak self] isSuccess in
+                if let spinner = self?.spinner {
+                    self?.removeSpinner(spinner: spinner)
+                }
+                if (isSuccess) {
+                    self?.showAlert(title: self?.getLocalizedString(key: "app_name") ?? "", description: self?.getLocalizedString(key: "reset_password_success") ?? "", completion: {(alert: UIAlertAction!) in self?.navigationController?.popViewController(animated: true)})
+                } else {
+                    self?.showAlert(title: self?.getLocalizedString(key: "general_error_title") ?? "", description: self?.getLocalizedString(key: "general_error_description") ?? "", completion: nil)
+                }
             })
-        })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
     @IBAction func sendRecoveryEmail(_ sender: Any) {

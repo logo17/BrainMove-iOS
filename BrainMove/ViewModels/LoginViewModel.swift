@@ -24,6 +24,8 @@ final class LoginViewModel : LoginViewModelType {
     var output: LoginViewModel.Output
     
     private let loginSubject = PublishSubject<Bool>()
+    private let emailVerifiedSubject = PublishSubject<Bool>()
+    private let isLoadingSubject = PublishSubject<Bool>()
 
     struct Input {
         let email: AnyObserver<String>
@@ -33,6 +35,9 @@ final class LoginViewModel : LoginViewModelType {
     struct Output {
         let isButtonEnabled: Driver<Bool>
         let successLogin: Driver<Bool>
+        let emailVerified: Driver<Bool>
+        let showError: Driver<Bool>
+        let isLoading: Driver<Bool>
     }
 
     init() {
@@ -52,16 +57,31 @@ final class LoginViewModel : LoginViewModelType {
         .asDriver(onErrorJustReturn: false)
     
         self.input = Input(email: emailSubject.asObserver(), password:passwordSubject.asObserver())
-        self.output = Output(isButtonEnabled: enableButton, successLogin: loginSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
+        self.output = Output(isButtonEnabled: enableButton, successLogin: loginSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false), emailVerified: emailVerifiedSubject.asObservable().asDriver(onErrorJustReturn: false), showError: loginSubject.asObservable().filter{!$0}.asDriver(onErrorJustReturn: false), isLoading: isLoadingSubject.asObservable().asDriver(onErrorJustReturn: false))
     }
     
     func loginUser(email: String, password: String) {
+        self.isLoadingSubject.onNext(true)
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          self?.isLoadingSubject.onNext(false)
           guard error == nil else {
               self?.loginSubject.onNext(false)
               return
           }
-          self?.loginSubject.onNext(true)
+            if let user = Auth.auth().currentUser {
+                if (user.isEmailVerified) {
+                    self?.loginSubject.onNext(true)
+                } else {
+                    self?.emailVerifiedSubject.onNext(false)
+                }
+            }
+          
+        }
+    }
+    
+    func sendVerificationEmail() {
+        if let user = Auth.auth().currentUser {
+            user.sendEmailVerification(completion: nil)
         }
     }
 }

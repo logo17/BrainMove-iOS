@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Charts
 import TinyConstraints
+import RxSwift
 
 class TrendsViewController : UIViewController, ChartViewDelegate {
     
@@ -35,10 +36,33 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
     @IBOutlet weak var bmrButton: UIButton!
     @IBOutlet weak var metabolicalAgeButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var highlitedMeasureValue: UILabel!
+    @IBOutlet weak var highlitedMeasureDate: UILabel!
+    @IBOutlet weak var emptyContainer: UIView!
+    @IBOutlet weak var infoContainer: UIView!
+    
+    var spinner: LoadingView?
+    let viewModel = TrendsViewModel()
+    let disposeBag = DisposeBag()
+    
+    var measurements = Array<Measurement>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initViews()
+        bindListeners()
+        getTrends()
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        valuesContainer.isHidden = false
+        let result = getSpecificMeasureInfo(index: Int(entry.x - 1))
+        highlitedMeasureDate.text = result.0
+        highlitedMeasureValue.text = result.1
+    }
+    
+    private func initViews() {
         chartContainer.addSubview(lineChartView)
         lineChartView.backgroundColor = .white
         lineChartView.delegate = self
@@ -56,6 +80,7 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         titleContainer.backgroundColor = UIColor.init(hexString: "#f39200")
         valuesContainer.toRounded(radius: 10)
         valuesContainer.backgroundColor = UIColor.init(hexString: "#f39200")
+        titleLabel.text = chartTitles[0]
         
         weightButton.isSelected = true
         weightButton.setBackgroundImage(UIImage.init(named: "peso_desac"), for: .normal)
@@ -84,16 +109,34 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         bmrButton.setBackgroundImage(UIImage.init(named: "bmr_act"), for: .selected)
         metabolicalAgeButton.setBackgroundImage(UIImage.init(named: "edad_metabolica_desac"), for: .normal)
         metabolicalAgeButton.setBackgroundImage(UIImage.init(named: "edad_metabolica_act"), for: .selected)
+    }
+    
+    private func bindListeners() {
+        viewModel.output.measurements
+            .drive(onNext:{ [weak self] measures in
+                if let spinner = self?.spinner {
+                    self?.removeSpinner(spinner: spinner)
+                }
+                self?.emptyContainer.isHidden = !measures.isEmpty
+                self?.infoContainer.isHidden = measures.isEmpty
+                self?.measurements = measures
+                self?.setChartData(yValues: self?.getChartDataEntryFromMeasures(tag: 0) ?? [])
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func getTrends() {
+        spinner = self.showSpinner(onView: self.view)
+        viewModel.getMeasures()
+    }
+    
+    func setChartData(yValues:[ChartDataEntry]) {
+        let format = NumberFormatter()
+        format.numberStyle = .decimal
+        let formatter = DefaultValueFormatter(formatter: format)
         
-        setChartData()
-    }
-    
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
-    }
-    
-    func setChartData() {
         let set = LineChartDataSet(entries: yValues)
+        set.valueFormatter = formatter
         set.circleRadius = 4
         set.setCircleColor(.black)
         set.circleHoleRadius = 2
@@ -113,14 +156,6 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         lineChartView.data = data
     }
     
-    let yValues:[ChartDataEntry] = [
-        ChartDataEntry(x: 0.0, y: 79.5),
-        ChartDataEntry(x: 1.0, y: 75.5),
-        ChartDataEntry(x: 2.0, y: 73.5),
-        ChartDataEntry(x: 3.0, y: 77.5),
-        ChartDataEntry(x: 4.0, y: 71.5),
-    ]
-    
     /// Creating gradient for filling space under the line chart
     private func getGradientFilling() -> CGGradient {
         // Setting fill gradient color
@@ -139,6 +174,8 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         if let button = sender as? UIButton {
             titleLabel.text = chartTitles[button.tag]
             handleButtonsState(button)
+            valuesContainer.isHidden = true
+            setChartData(yValues: getChartDataEntryFromMeasures(tag: button.tag))
         }
     }
     
@@ -189,5 +226,87 @@ class TrendsViewController : UIViewController, ChartViewDelegate {
         }
     }
     
+    private func getChartDataEntryFromMeasures(tag: Int) -> [ChartDataEntry] {
+        var result = [ChartDataEntry]()
+        
+        for (index, element) in measurements.enumerated() {
+            switch tag {
+                case 0:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.weight))
+                case 1:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.bmi))
+                case 2:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.bodyFat))
+                case 3:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.fatFreeBody))
+                case 4:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.subcutaneousFat))
+                case 5:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.visceralFat))
+                case 6:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.bodyWater))
+                case 7:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.skeletalMuscle))
+                case 8:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.boneMass))
+                case 9:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.muscleMass))
+                case 10:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.protein))
+                case 11:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: element.bmr))
+                case 12:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: Double(element.metabolicalAge)))
+                default:
+                    result.append(ChartDataEntry(x: Double(index + 1), y: 0.0))
+            }
+        }
+        return result
+    }
+    
     let chartTitles:[String] = ["PESO", "BMI", "GRASA CORPORAL", "PESO CORPORAL SIN GRASA", "GRASA SUBCUTÁNEA", "GRASA VISCERAL", "AGUA CORPORAL", "MÚSCULO ESQUELÉTICO", "MASA ÓSEA", "MASA MUSCULAR", "PROTEÍNA", "BMR", "EDAD METABÓLICA"]
+    
+    private func getSpecificMeasureInfo(index: Int) -> (String, String) {
+        let measureIndex = chartTitles.firstIndex(of: titleLabel.text ?? "")
+        let currentMeasure = measurements[index]
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/YYYY"
+        dateFormatterPrint.locale = Locale(identifier: "ES")
+        let dateResult = dateFormatterPrint.string(from: currentMeasure.date)
+        
+        var measurementResult = ""
+        switch measureIndex {
+            case 0:
+                measurementResult = "\(currentMeasure.weight) kg"
+            case 1:
+                measurementResult = "\(currentMeasure.bmi)"
+            case 2:
+                measurementResult = "\(currentMeasure.bodyFat) %"
+            case 3:
+                measurementResult = "\(currentMeasure.fatFreeBody) kg"
+            case 4:
+                measurementResult = "\(currentMeasure.subcutaneousFat) %"
+            case 5:
+                measurementResult = "\(currentMeasure.visceralFat)"
+            case 6:
+                measurementResult = "\(currentMeasure.bodyWater) %"
+            case 7:
+                measurementResult = "\(currentMeasure.skeletalMuscle) %"
+            case 8:
+                measurementResult = "\(currentMeasure.muscleMass) kg"
+            case 9:
+                measurementResult = "\(currentMeasure.boneMass) kg"
+            case 10:
+                measurementResult = "\(currentMeasure.protein) %"
+            case 11:
+                measurementResult = "\(currentMeasure.bmr) kcal"
+            case 12:
+                measurementResult = "\(currentMeasure.metabolicalAge)"
+            default:
+                measurementResult = "\(currentMeasure.weight) kg"
+        }
+        
+        return (dateResult, measurementResult)
+    }
 }
