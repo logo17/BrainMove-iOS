@@ -26,7 +26,7 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
     
     private let measurementsSubject = PublishSubject<Measurement>()
     private let nameSubject = BehaviorSubject<String>.init(value: "")
-    private let logoutSubject = PublishSubject<Bool>()
+    private let userImageSubject = BehaviorSubject<String>.init(value: "")
     private let isLoadingSubject = PublishSubject<Bool>()
     private let showErrorSubject = PublishSubject<Bool>()
     
@@ -37,7 +37,7 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
     struct Output {
         let measurement: Driver<Measurement>
         let userName: Driver<String>
-        let logout: Driver<Bool>
+        let imageURL: Driver<String>
         let isLoading: Driver<Bool>
         let showError: Driver<Bool>
     }
@@ -46,18 +46,7 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
 
     init() {
         self.input = Input()
-        self.output = Output(measurement: measurementsSubject.asObservable().asDriver(onErrorJustReturn: Measurement()), userName: nameSubject.asObservable().asDriver(onErrorJustReturn: ""), logout: logoutSubject.asObservable().asDriver(onErrorJustReturn: false), isLoading: isLoadingSubject.asObservable().asDriver(onErrorJustReturn: false), showError: showErrorSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
-    }
-    
-    func logoutUser () {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            logoutSubject.onNext(true)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-            logoutSubject.onNext(false)
-        }
+        self.output = Output(measurement: measurementsSubject.asObservable().asDriver(onErrorJustReturn: Measurement()), userName: nameSubject.asObservable().asDriver(onErrorJustReturn: ""),imageURL: userImageSubject.asObservable().asDriver(onErrorJustReturn: ""), isLoading: isLoadingSubject.asObservable().asDriver(onErrorJustReturn: false), showError: showErrorSubject.asObservable().filter{$0}.asDriver(onErrorJustReturn: false))
     }
     
     func getMeasures() {
@@ -66,6 +55,7 @@ final class MeasurementsViewModel : MeasurementsViewModelType {
         }
         self.isLoadingSubject.onNext(true)
         self.nameSubject.onNext(user.displayName ?? "")
+        self.userImageSubject.onNext(user.photoURL?.absoluteString ?? "")
         db.collection("measures")
         .limit(to: 1)
         .order(by: "date", descending: true)

@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 
 class MeasurementsViewController : UIViewController {
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var dateTextView: UILabel!
     @IBOutlet weak var weightView: MeasurementsView!
@@ -28,9 +29,14 @@ class MeasurementsViewController : UIViewController {
     @IBOutlet weak var bmrView: MeasurementsView!
     @IBOutlet weak var metabolicalAgeView: MeasurementsView!
     
+    enum ImagePickerType : Int {
+        case camera = 0, album
+    }
+    
     let viewModel = MeasurementsViewModel()
     var disposeBag = DisposeBag()
     var spinner: LoadingView?
+    var imageData: Data!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,7 @@ class MeasurementsViewController : UIViewController {
     }
 
     private func initViews() {
+        userImageView.rounded()
         dateTextView.toPrimaryRounded()
         weightView.labelText.text = "Peso".uppercased()
         bmiView.labelText.text = "BMI".uppercased()
@@ -71,15 +78,17 @@ class MeasurementsViewController : UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.output.userName
-            .drive(onNext:{ [weak self] name in
-                self?.displayNameLabel.text = name
+        viewModel.output.imageURL
+            .drive(onNext:{ [weak self] urlImage in
+                if let parseURL = URL.init(string: urlImage) {
+                    self?.userImageView.load(url: parseURL)
+                }
             })
             .disposed(by: disposeBag)
         
-        viewModel.output.logout
-            .drive(onNext:{ [weak self] isSuccess in
-                self?.navigationController?.popViewController(animated: true)
+        viewModel.output.userName
+            .drive(onNext:{ [weak self] name in
+                self?.displayNameLabel.text = name
             })
             .disposed(by: disposeBag)
         
@@ -118,7 +127,7 @@ class MeasurementsViewController : UIViewController {
         self.dateTextView.text = dateFormatterPrint.string(from: measurement.date).capitalized
     }
     @IBAction func logoutClicked(_ sender: Any) {
-        viewModel.logoutUser()
+        performSegue(withIdentifier: "showSettings", sender: self)
     }
     
     private func handleLoadingSpinner(isLoading: Bool) {
@@ -130,4 +139,23 @@ class MeasurementsViewController : UIViewController {
             }
         }
     }
+    @IBAction func pickAnImage(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+       
+       func uploadImage() {
+        handleLoadingSpinner(isLoading: true)
+           let imageUploader = ImageUploader()
+           imageUploader.uploadImage(data: imageData, completion: { [weak self] result in
+            self?.handleLoadingSpinner(isLoading: false)
+            if (!result.isEmpty) {
+                if let parseURL = URL.init(string: result) {
+                    self?.userImageView.load(url: parseURL)
+                }
+            }
+           })
+       }
 }

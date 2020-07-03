@@ -16,8 +16,12 @@ class LauncherViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        bindListeners()
         viewModel.checkLoggedInUser()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindListeners()
     }
     
     override func viewWillAppear(_ animated: Bool) {

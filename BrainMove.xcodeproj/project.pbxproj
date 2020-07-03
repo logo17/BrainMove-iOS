@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		1017FC243F7C197C2237B791 /* Pods_BrainMove_BrainMoveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138A0C5F4CD7D4661F28ACE0 /* Pods_BrainMove_BrainMoveUITests.framework */; };
 		5340F0926BCD031CC70D753A /* Pods_BrainMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F45776C82ED13FF81F92706 /* Pods_BrainMove.framework */; };
+		CA148BA824AD726200E7F5D4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BA724AD726200E7F5D4 /* SettingsViewController.swift */; };
+		CA148BAA24AD72EF00E7F5D4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BA924AD72EF00E7F5D4 /* SettingsViewModel.swift */; };
+		CA148BAE24AEB94A00E7F5D4 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BAD24AEB94A00E7F5D4 /* ImageUploader.swift */; };
+		CA148BB124AEBA8D00E7F5D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BB024AEBA8D00E7F5D4 /* Constants.swift */; };
+		CA148BB324AEBFF100E7F5D4 /* MeasurementsViewController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BB224AEBFF100E7F5D4 /* MeasurementsViewController+UIImagePicker.swift */; };
+		CA148BB524AFEAFE00E7F5D4 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BB424AFEAFE00E7F5D4 /* PaymentsViewController.swift */; };
+		CA148BB724AFEF3700E7F5D4 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BB624AFEF3700E7F5D4 /* PaymentCell.swift */; };
+		CA148BB924AFEFDD00E7F5D4 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BB824AFEFDD00E7F5D4 /* Payment.swift */; };
+		CA148BBB24AFF22600E7F5D4 /* PaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA148BBA24AFF22600E7F5D4 /* PaymentsViewModel.swift */; };
 		CA5034BA24A7A35300C09F5E /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034B924A7A35300C09F5E /* BlockCell.swift */; };
 		CA5034BC24A7A49200C09F5E /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */; };
 		CA5034BE24A7B3A300C09F5E /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */; };
@@ -94,6 +103,15 @@
 		9365F6B2BD0A33361563341F /* Pods-BrainMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.release.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.release.xcconfig"; sourceTree = "<group>"; };
 		9443E15EE953B690926FF96F /* Pods-BrainMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove/Pods-BrainMove.debug.xcconfig"; sourceTree = "<group>"; };
 		A8BFF04B72D8C0CD86F9CD0F /* Pods-BrainMove-BrainMoveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; path = "Target Support Files/Pods-BrainMove-BrainMoveUITests/Pods-BrainMove-BrainMoveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA148BA724AD726200E7F5D4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CA148BA924AD72EF00E7F5D4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		CA148BAD24AEB94A00E7F5D4 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		CA148BB024AEBA8D00E7F5D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CA148BB224AEBFF100E7F5D4 /* MeasurementsViewController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeasurementsViewController+UIImagePicker.swift"; sourceTree = "<group>"; };
+		CA148BB424AFEAFE00E7F5D4 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		CA148BB624AFEF3700E7F5D4 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		CA148BB824AFEFDD00E7F5D4 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		CA148BBA24AFF22600E7F5D4 /* PaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewModel.swift; sourceTree = "<group>"; };
 		CA5034B924A7A35300C09F5E /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		CA5034BB24A7A49200C09F5E /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		CA5034BD24A7B3A300C09F5E /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
@@ -198,6 +216,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA148BAF24AEBA7F00E7F5D4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA148BAD24AEB94A00E7F5D4 /* ImageUploader.swift */,
+				CA148BB024AEBA8D00E7F5D4 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CA9B282124802F780003E870 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +250,7 @@
 		CA9B282C24802F780003E870 /* BrainMove */ = {
 			isa = PBXGroup;
 			children = (
+				CA148BAF24AEBA7F00E7F5D4 /* Utils */,
 				CADD849124A2C5C90085D76E /* Model */,
 				CADD847C249EAE540085D76E /* Cells */,
 				CADD8466249C3CB30085D76E /* Views */,
@@ -262,6 +290,7 @@
 		CA9B285F24805ADD0003E870 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CA148BB224AEBFF100E7F5D4 /* MeasurementsViewController+UIImagePicker.swift */,
 				CA9B285D248058A80003E870 /* UIColorExt.swift */,
 				CA9B286024805CB20003E870 /* MDCTextInputControllerFilledExt.swift */,
 				CA9B286A2480A19C0003E870 /* UIViewController+TextField.swift */,
@@ -300,6 +329,8 @@
 				CA5034BF24A7D53F00C09F5E /* WorkoutDetailViewController.swift */,
 				CA5034C624A803CB00C09F5E /* ExerciseExplanationViewController.swift */,
 				CA5034CE24A91C2B00C09F5E /* TrendsViewController.swift */,
+				CA148BA724AD726200E7F5D4 /* SettingsViewController.swift */,
+				CA148BB424AFEAFE00E7F5D4 /* PaymentsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +346,8 @@
 				CADD849824A6B0B70085D76E /* PlanViewModel.swift */,
 				CA5034D024A98E0300C09F5E /* TrendsViewModel.swift */,
 				CA5034D624AAAD0E00C09F5E /* CreateAccountViewModel.swift */,
+				CA148BA924AD72EF00E7F5D4 /* SettingsViewModel.swift */,
+				CA148BBA24AFF22600E7F5D4 /* PaymentsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -338,6 +371,7 @@
 				CA5034B924A7A35300C09F5E /* BlockCell.swift */,
 				CA5034C124A7D6DA00C09F5E /* WorkoutCell.swift */,
 				CA5034C824A8050F00C09F5E /* ExerciseCell.swift */,
+				CA148BB624AFEF3700E7F5D4 /* PaymentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -351,6 +385,7 @@
 				CADD849C24A6B1720085D76E /* Routine.swift */,
 				CADD849E24A6B1840085D76E /* Block.swift */,
 				CADD84A024A6B1930085D76E /* Exercise.swift */,
+				CA148BB824AFEFDD00E7F5D4 /* Payment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -623,6 +658,7 @@
 				CA5034C724A803CB00C09F5E /* ExerciseExplanationViewController.swift in Sources */,
 				CADD849324A2C5DE0085D76E /* Measurement.swift in Sources */,
 				CADD849924A6B0B70085D76E /* PlanViewModel.swift in Sources */,
+				CA148BB524AFEAFE00E7F5D4 /* PaymentsViewController.swift in Sources */,
 				CADD847E249EAE860085D76E /* ReservationTableViewCell.swift in Sources */,
 				CA5034D724AAAD0E00C09F5E /* CreateAccountViewModel.swift in Sources */,
 				CA5034BE24A7B3A300C09F5E /* UIImageView+Download.swift in Sources */,
@@ -631,9 +667,12 @@
 				CADD849B24A6B1640085D76E /* Plan.swift in Sources */,
 				CADD8482249ED0800085D76E /* UIView+Utils.swift in Sources */,
 				CADD848C24A0558D0085D76E /* UIViewController+Spinner.swift in Sources */,
+				CA148BBB24AFF22600E7F5D4 /* PaymentsViewModel.swift in Sources */,
 				CADD84A124A6B1930085D76E /* Exercise.swift in Sources */,
 				CADD849F24A6B1840085D76E /* Block.swift in Sources */,
 				CADD848E24A2BECF0085D76E /* String+Validations.swift in Sources */,
+				CA148BA824AD726200E7F5D4 /* SettingsViewController.swift in Sources */,
+				CA148BAE24AEB94A00E7F5D4 /* ImageUploader.swift in Sources */,
 				CADD8474249D93B80085D76E /* MeasurementsViewController.swift in Sources */,
 				CA9B283024802F780003E870 /* SceneDelegate.swift in Sources */,
 				CA5034C924A8050F00C09F5E /* ExerciseCell.swift in Sources */,
@@ -641,6 +680,7 @@
 				CA5034C224A7D6DA00C09F5E /* WorkoutCell.swift in Sources */,
 				CA5034CD24A80B6600C09F5E /* UIImage+Gif.swift in Sources */,
 				CA9B28742480C0AA0003E870 /* ForgotPasswordViewModel.swift in Sources */,
+				CA148BB124AEBA8D00E7F5D4 /* Constants.swift in Sources */,
 				CA5034D924AC22AA00C09F5E /* UIViewController+Error.swift in Sources */,
 				CA5034D124A98E0300C09F5E /* TrendsViewModel.swift in Sources */,
 				CA9B286B2480A19C0003E870 /* UIViewController+TextField.swift in Sources */,
@@ -650,10 +690,14 @@
 				CA5034C024A7D53F00C09F5E /* WorkoutDetailViewController.swift in Sources */,
 				CA9B286E2480A62E0003E870 /* LoginViewModel.swift in Sources */,
 				CADD849D24A6B1720085D76E /* Routine.swift in Sources */,
+				CA148BB724AFEF3700E7F5D4 /* PaymentCell.swift in Sources */,
 				CADD848424A01E0F0085D76E /* LauncherViewController.swift in Sources */,
 				CADD847B249E903F0085D76E /* ReservationsViewController.swift in Sources */,
+				CA148BB324AEBFF100E7F5D4 /* MeasurementsViewController+UIImagePicker.swift in Sources */,
 				CADD846C249C3DDB0085D76E /* MeasurementsView.swift in Sources */,
 				CADD8480249ECF590085D76E /* PlanViewController.swift in Sources */,
+				CA148BB924AFEFDD00E7F5D4 /* Payment.swift in Sources */,
+				CA148BAA24AD72EF00E7F5D4 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ target 'BrainMove' do
   pod 'FirebaseFirestoreSwift'
   pod 'Charts'
   pod 'TinyConstraints'
+  pod 'Cloudinary', '~> 2.0'
 
   target 'BrainMoveTests' do
     inherit! :search_paths
