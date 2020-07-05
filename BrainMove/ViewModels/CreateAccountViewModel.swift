@@ -91,12 +91,12 @@ final class CreateAccountViewModel : CreateAccountViewModelType {
             
             let keywords = name.split(separator: " ").map { $0.lowercased() }
         
-            var ref: DocumentReference? = nil
-            ref = self?.db.collection("users").addDocument(data: [
+            self?.db.collection("users").document(user.uid).setData([
                 "fullName": name,
                 "email": email,
                 "id": user.uid,
-                "keywords": keywords
+                "keywords": keywords,
+                "isBlocked": false
             ]) { err in
                 self?.showLoadingSubject.onNext(false)
                 if let err = err {
@@ -111,7 +111,7 @@ final class CreateAccountViewModel : CreateAccountViewModelType {
                             self?.emailSentSubject.onNext(true)
                         }
                     }
-                    print("Document added with ID: \(ref!.documentID)")
+                    print("Document added with ID: \(user.uid)")
                 }
             }
         }
