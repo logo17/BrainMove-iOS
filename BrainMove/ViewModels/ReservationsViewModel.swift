@@ -87,15 +87,19 @@ final class ReservationsViewModel : ReservationsViewModelType {
             return
         }
         self.isLoadingSubject.onNext(true)
+        let userDetails = [
+            "fullName": user.displayName,
+            "id": user.uid
+        ]
         db.collection("reservation").document(reservation.id)
             .updateData([
-                "spaces": FieldValue.arrayUnion([user.uid])
+                "spaces": FieldValue.arrayUnion([userDetails]),
+                "isDoingReservation": true
             ]) { (error) in
                 self.isLoadingSubject.onNext(false)
+                self.getReservations(isToday: isToday)
                 if error != nil {
                     self.showErrorSubject.onNext(true)
-                } else {
-                    self.getReservations(isToday: isToday)
                 }
         }
 
@@ -106,15 +110,19 @@ final class ReservationsViewModel : ReservationsViewModelType {
             return
         }
         self.isLoadingSubject.onNext(true)
+        let userDetails = [
+            "fullName": user.displayName,
+            "id": user.uid
+        ]
         db.collection("reservation").document(reservation.id)
             .updateData([
-                "spaces": FieldValue.arrayRemove([user.uid])
+                "spaces": FieldValue.arrayRemove([userDetails]),
+                "isDoingReservation": false
             ]) { (error) in
                 self.isLoadingSubject.onNext(false)
+                self.getReservations(isToday: isToday)
                 if error != nil {
                     self.showErrorSubject.onNext(true)
-                } else {
-                    self.getReservations(isToday: isToday)
                 }
         }
     }

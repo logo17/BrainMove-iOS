@@ -630,15 +630,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XH5-p3-dvO">
                                 <rect key="frame" x="0.0" y="44" width="414" height="643"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zTP-d2-i7Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan_background_image" translatesAutoresizingMaskIntoConstraints="NO" id="zTP-d2-i7Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="jAb-xW-Inv"/>
+                                            <constraint firstAttribute="height" constant="200" id="jAb-xW-Inv"/>
                                         </constraints>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kxu-LX-fS9">
-                                        <rect key="frame" x="0.0" y="232.33333333333329" width="414" height="410.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="252.33333333333329" width="414" height="390.66666666666674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineTableViewCell" rowHeight="44" id="Hiw-NK-Cv1" customClass="RoutineCell" customModule="BrainMove" customModuleProvider="target">
@@ -649,19 +649,19 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-zN-9sj">
-                                                            <rect key="frame" x="81" y="4" width="252" height="36"/>
+                                                            <rect key="frame" x="40" y="4" width="334" height="36"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-C6-PCc">
-                                                                    <rect key="frame" x="16" y="8" width="220" height="20"/>
+                                                                    <rect key="frame" x="16" y="8" width="302" height="20"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdJ-BP-dc7">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="20"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INICIAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTy-Td-GBB">
-                                                                            <rect key="frame" x="120" y="0.0" width="100" height="20"/>
+                                                                            <rect key="frame" x="202" y="0.0" width="100" height="20"/>
                                                                             <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="24" id="XiJ-QM-932"/>
@@ -685,8 +685,8 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="NL9-zN-9sj" firstAttribute="top" secondItem="cmI-gp-Oiv" secondAttribute="top" constant="4" id="P4f-U0-8Hp"/>
-                                                        <constraint firstItem="NL9-zN-9sj" firstAttribute="leading" secondItem="cmI-gp-Oiv" secondAttribute="leading" constant="81" id="iS1-ZJ-Eoz"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NL9-zN-9sj" secondAttribute="trailing" constant="81" id="qs9-tg-iOl"/>
+                                                        <constraint firstItem="NL9-zN-9sj" firstAttribute="leading" secondItem="cmI-gp-Oiv" secondAttribute="leading" constant="40" id="iS1-ZJ-Eoz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NL9-zN-9sj" secondAttribute="trailing" constant="40" id="qs9-tg-iOl"/>
                                                         <constraint firstAttribute="bottom" secondItem="NL9-zN-9sj" secondAttribute="bottom" constant="4" id="vlj-xD-VR7"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -703,7 +703,7 @@
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan de Junio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-DY-tTG">
-                                        <rect key="frame" x="40" y="164" width="334" height="32"/>
+                                        <rect key="frame" x="40" y="184" width="334" height="32"/>
                                         <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="3qo-6w-p24"/>
@@ -713,7 +713,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSf-TE-hvO">
-                                        <rect key="frame" x="40" y="204" width="334" height="20.333333333333343"/>
+                                        <rect key="frame" x="40" y="224" width="334" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1753,5 +1753,6 @@
         <image name="ic_workout_explanation" width="42" height="42"/>
         <image name="ic_workout_subtitle_bg" width="139" height="42"/>
         <image name="image_launcher" width="360" height="640"/>
+        <image name="plan_background_image" width="360.66665649414062" height="180"/>
     </resources>
 </document>

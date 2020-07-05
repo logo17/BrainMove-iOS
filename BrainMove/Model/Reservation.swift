@@ -30,15 +30,24 @@ struct Reservation {
         self.id = reservationId
         guard let maxCapacity = data["maxCapacity"] as? Int,
             let date = data["date"] as? Timestamp,
-            let spaces = data["spaces"] as? Array<String>,
+            let spaces = data["spaces"] as? Array<[String: Any]>,
             let activityId = data["activityId"] as? String else {
                 return nil
+        }
+        
+        var contains = false
+        
+        for user in spaces {
+            if (user["id"] as? String ?? "" == userId) {
+                contains = true
+                break
+            }
         }
 
         self.maxCapacity = maxCapacity
         self.date = date.dateValue()
         self.availableSpaces = maxCapacity - spaces.count
-        self.isReserved = spaces.contains(userId)
+        self.isReserved = contains
         self.activityId = activityId
     
     }
