@@ -310,6 +310,9 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.4.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
   - leveldb-library (1.22)
   - MaterialComponents (109.5.0):
     - MaterialComponents/ActionSheet (= 109.5.0)
@@ -949,6 +952,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - FirebaseFirestoreSwift
+  - Kingfisher
   - MaterialComponents
   - MaterialComponents/Snackbar
   - MaterialComponents/Tabs
@@ -976,6 +980,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - MaterialComponents
     - MDFInternationalization
@@ -1008,6 +1013,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MaterialComponents: 7698cdf7eacb5f192456dbbe597aa7a8857fa3ef
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
@@ -1021,6 +1027,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: fa70c101a8d9a42fa709c34806c67ba9cc90faf3
+PODFILE CHECKSUM: c3cd6e15085fe109b355ae04466184ed4286064d
 
 COCOAPODS: 1.9.2

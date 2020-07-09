@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Kingfisher
+
 
 class ExerciseExplanationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,9 +21,7 @@ class ExerciseExplanationViewController : UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = workout?.demoUrl {
-            let gifURL : String = url
-            let imageURL = UIImage.gifImageWithURL(gifURL)
-            self.explanationImageView.image = imageURL
+            self.explanationImageView.kf.setImage(with: URL(string: url)!, placeholder: UIImage(named: "imagen_loading_placeholder"))
         }
         explanationsTableView.separatorStyle = .none
     }

@@ -17,6 +17,7 @@ class PaymentsViewController : UIViewController, UITableViewDelegate, UITableVie
     var plan = Plan()
     var payments = Array<Payment>()
     @IBOutlet weak var paymentsTable: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     var spinner: LoadingView?
     
     override func viewDidLoad() {
@@ -33,6 +34,8 @@ class PaymentsViewController : UIViewController, UITableViewDelegate, UITableVie
     private func bindListeners() {
         viewModel.output.payments
             .drive(onNext:{ [weak self] payments in
+                self?.emptyView.isHidden = true
+                self?.paymentsTable.isHidden = false
                 self?.payments = payments
                 self?.paymentsTable.reloadData()
             })

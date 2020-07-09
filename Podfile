@@ -17,6 +17,7 @@ target 'BrainMove' do
   pod 'Charts'
   pod 'TinyConstraints'
   pod 'Cloudinary', '~> 2.0'
+  pod 'Kingfisher'
 
   target 'BrainMoveTests' do
     inherit! :search_paths

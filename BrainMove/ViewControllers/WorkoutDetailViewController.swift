@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 
-class WorkoutDetailViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    @IBOutlet weak var workoutsCollectionView: UICollectionView!
-    @IBOutlet weak var blockImageView: UIImageView!
+class WorkoutDetailViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var workoutsTableView: UITableView!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var durationUnitLabel: UILabel!
     
@@ -26,6 +25,7 @@ class WorkoutDetailViewController : UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,20 +33,25 @@ class WorkoutDetailViewController : UIViewController, UICollectionViewDataSource
         self.title = block?.name
         self.durationLabel.text = "\(block?.duration ?? 0)"
         self.durationUnitLabel.text = block?.unit.uppercased()
-        if let parseURL = URL.init(string: block?.imageUrl ?? "") {
-            blockImageView.load(url: parseURL)
-        }
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func initViews() {
+        workoutsTableView.separatorStyle = .none
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.block?.exercises.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "WorkoutTableViewCell"
         
-        guard let cell = workoutsCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? WorkoutCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? WorkoutCell  else {
             fatalError("The dequeued cell is not an instance of WorkoutCell.")
         }
         
@@ -54,45 +59,31 @@ class WorkoutDetailViewController : UIViewController, UICollectionViewDataSource
             cell.workoutName.text = workout.name
             cell.workoutQuantity.text = workout.quantity
             cell.inflateImageView(url: workout.backgroundImageUrl)
+            cell.selectionStyle = .none
         }
         
         return cell
     }
     
-    //1
-     func collectionView(_ collectionView: UICollectionView,
-                         layout collectionViewLayout: UICollectionViewLayout,
-                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-       //2
-       let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-       let availableWidth = view.frame.width - paddingSpace
-       let widthPerItem = availableWidth / itemsPerRow
-       
-       return CGSize(width: widthPerItem, height: widthPerItem)
-     }
-     
-     //3
-     func collectionView(_ collectionView: UICollectionView,
-                         layout collectionViewLayout: UICollectionViewLayout,
-                         insetForSectionAt section: Int) -> UIEdgeInsets {
-       return sectionInsets
-     }
-     
-     // 4
-     func collectionView(_ collectionView: UICollectionView,
-                         layout collectionViewLayout: UICollectionViewLayout,
-                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return sectionInsets.left
-     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 25
+    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: section == 0 ? 0 : 25))
+        headerView.backgroundColor = UIColor.white
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showExplanations", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showExplanations") {
-            let indexPath = self.workoutsCollectionView.indexPathsForSelectedItems?.first
-            let exercise = self.block?.exercises[indexPath?.row ?? 0]
+            let indexPath : NSIndexPath = self.workoutsTableView.indexPathForSelectedRow! as NSIndexPath
+            let exercise = self.block?.exercises[indexPath.row]
             let destinationVC = segue.destination as! ExerciseExplanationViewController
             destinationVC.workout = exercise
         }

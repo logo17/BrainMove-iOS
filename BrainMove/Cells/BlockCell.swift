@@ -18,8 +18,6 @@ class BlockCell : UITableViewCell {
     }
     
     func inflateImageView(url: String) {
-        if let parseURL = URL.init(string: url) {
-            blockImage.load(url: parseURL)
-        }
+        self.blockImage.kf.setImage(with: URL(string: url)!, placeholder: UIImage(named: "imagen_loading_placeholder"))
     }
 }

@@ -80,8 +80,8 @@ class MeasurementsViewController : UIViewController {
         
         viewModel.output.imageURL
             .drive(onNext:{ [weak self] urlImage in
-                if let parseURL = URL.init(string: urlImage) {
-                    self?.userImageView.load(url: parseURL)
+                if (!urlImage.isEmpty) {
+                    self?.userImageView.kf.setImage(with: URL(string: urlImage)!)
                 }
             })
             .disposed(by: disposeBag)
@@ -152,9 +152,7 @@ class MeasurementsViewController : UIViewController {
            imageUploader.uploadImage(data: imageData, completion: { [weak self] result in
             self?.handleLoadingSpinner(isLoading: false)
             if (!result.isEmpty) {
-                if let parseURL = URL.init(string: result) {
-                    self?.userImageView.load(url: parseURL)
-                }
+                self?.userImageView.kf.setImage(with: URL(string: result)!)
             }
            })
        }

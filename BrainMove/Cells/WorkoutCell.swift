@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WorkoutCell : UICollectionViewCell {
+class WorkoutCell : UITableViewCell {
     @IBOutlet weak var workoutImage: UIImageView!
     @IBOutlet weak var workoutQuantity: UILabel!
     @IBOutlet weak var workoutName: UILabel!
@@ -24,8 +24,6 @@ class WorkoutCell : UICollectionViewCell {
     }
     
     func inflateImageView(url: String) {
-        if let parseURL = URL.init(string: url) {
-            workoutImage.load(url: parseURL)
-        }
+        self.workoutImage.kf.setImage(with: URL(string: url)!, placeholder: UIImage(named: "imagen_loading_placeholder"))
     }
 }
