@@ -71,7 +71,7 @@ class RoutineViewController : UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showWorkout") {
             let indexPath : NSIndexPath = self.routineTableView.indexPathForSelectedRow! as NSIndexPath
-            let block = routine?.blocks[indexPath.row]
+            let block = routine?.blocks[indexPath.section]
             let destinationVC = segue.destination as! WorkoutDetailViewController
             destinationVC.block = block
         }

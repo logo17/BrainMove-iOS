@@ -55,7 +55,7 @@ class WorkoutDetailViewController : UIViewController, UITableViewDataSource, UIT
             fatalError("The dequeued cell is not an instance of WorkoutCell.")
         }
         
-        if let workout = self.block?.exercises[indexPath.row] {
+        if let workout = self.block?.exercises[indexPath.section] {
             cell.workoutName.text = workout.name
             cell.workoutQuantity.text = workout.quantity
             cell.inflateImageView(url: workout.backgroundImageUrl)
@@ -83,7 +83,7 @@ class WorkoutDetailViewController : UIViewController, UITableViewDataSource, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showExplanations") {
             let indexPath : NSIndexPath = self.workoutsTableView.indexPathForSelectedRow! as NSIndexPath
-            let exercise = self.block?.exercises[indexPath.row]
+            let exercise = self.block?.exercises[indexPath.section]
             let destinationVC = segue.destination as! ExerciseExplanationViewController
             destinationVC.workout = exercise
         }

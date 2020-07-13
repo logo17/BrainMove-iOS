@@ -18,6 +18,9 @@ target 'BrainMove' do
   pod 'TinyConstraints'
   pod 'Cloudinary', '~> 2.0'
   pod 'Kingfisher'
+  pod 'Firebase/Crashlytics'
+  # Recommended: Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
 
   target 'BrainMoveTests' do
     inherit! :search_paths
